@@ -5,35 +5,26 @@
 本地搭建好环境(node.js，node淘宝镜像，mongodb安装以及配置等等)
 
 ``` bash
-1/use vue2 (mongodb命令下创建数据库)
+1/use vue2  (mongodb命令下创建数据库)
+2/db.createUser({user:"root",pwd:"hexx123",roles:[{role:"readWrite",db:"vue2"}]})  (mongodb命令下创建用户)
+3/
+db.users.insert({
+  "username": "admin",
+  "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+  "nick": "admin123",
+  "sex": 1,
+  "email": "hcly3015@163.com",
+  "avatar": "",
+  "remark": "",
+  "createtime": ISODate("2018-09-03T10:28:12.481+08:00")
+})  (mongodb用户表中插入数据：username:admin，password：123456)
 ```
-
-``` bash
-2/db.createUser({user:"root",pwd:"hexx123",roles:[{role:"readWrite",db:"vue2"}]}) (mongodb命令下创建用户)
-```
-
-``` bash
-3/db.users.insert(
-  {
-    "username": "admin",
-    "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
-    "nick": "admin123",
-    "sex": 1,
-    "email": "hcly3015@163.com",
-    "avatar": "",
-    "remark": "",
-    "createtime": ISODate("2018-09-03T10:28:12.481+08:00")
-  }
-)
-(mongodb用户表中插入数据：username:admin，password：123456)
-```
-
 
 ## 项目启动
 1/初始化项目
 
 ``` bash
-$ npm install （建议使用淘宝镜像$ cnpm install）
+$ npm install  （建议使用淘宝镜像$ cnpm install）
 ```
 
 2/启动服务端
@@ -47,7 +38,6 @@ $ npm run server
 ``` bash
 $ npm run dev
 ```
-
 
 ## jsonwebtoken（JWT）
 JWT能够在HTTP通信过程中，帮助我们进行身份认证。

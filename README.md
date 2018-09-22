@@ -5,10 +5,9 @@
 本地搭建好环境(node.js，node淘宝镜像，mongodb安装以及配置等等)
 
 ``` bash
-1/use vue2  (mongodb命令下创建数据库)
-2/db.createUser({user:"root",pwd:"hexx123",roles:[{role:"readWrite",db:"vue2"}]})  (mongodb命令下创建用户)
-3/
-db.users.insert({
+$ use vue2  (mongodb命令下创建数据库)
+$ db.createUser({user:"root",pwd:"hexx123",roles:[{role:"readWrite",db:"vue2"}]})  (mongodb命令下创建用户)
+$ db.users.insert({
   "username": "admin",
   "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
   "nick": "admin123",
@@ -68,9 +67,9 @@ Json Web Token是怎么工作的？
 ```
 
 ## 效果图
-![Alt text](https://github.com/hcly3015/vue2-admin/raw/master/screenshot/login.png)
-![Alt text](https://github.com/hcly3015/vue2-admin/raw/master/screenshot/home.png)
-![Alt text](https://github.com/hcly3015/vue2-admin/raw/master/screenshot/userlist.png)
-![Alt text](https://github.com/hcly3015/vue2-admin/raw/master/screenshot/useradd.png)
-![Alt text](https://github.com/hcly3015/vue2-admin/raw/master/screenshot/useredit.png)
-![Alt text](https://github.com/hcly3015/vue2-admin/raw/master/screenshot/userlist1.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/login.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/home.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/userlist.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/useradd.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/useredit.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/userlist1.png)

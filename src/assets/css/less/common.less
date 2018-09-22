@@ -1,0 +1,30 @@
+// 全局共同样式
+
+// ===========================折叠菜单隐藏内容文本
+.el-menu--collapse>div>.el-menu-item span, 
+.el-menu--collapse>div>.el-submenu>.el-submenu__title span {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: inline-block;
+}
+
+// ===========================工具栏搜素
+.searchbar {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #dfe6ec;
+  .el-form-item {
+    margin-bottom: 10px;
+    .el-form-item__label {
+      width: 85px;
+      text-align: left;
+    }
+  }
+}
+
+// ===========================网格列表
+.tablelist {
+  padding-top: 5px;
+}

@@ -1,0 +1,330 @@
+
+// ===========================登录样式
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #e4e5e6;
+  .login-form{
+    width: 375px;
+    height: 450px;
+    padding: 30px;
+    background-color: white;
+    text-align: left;
+    border-radius: 4px;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    zoom: 1;
+    display: block;
+    .login-header{
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// ===========================首页样式
+.main {
+  display: flex;
+  .el-menu:not(.el-menu--collapse) {
+    width: 230px;
+  }
+  .app {
+    width: 100%;
+    background-color: #ecf0f5;
+  }
+  .aside {
+    position: fixed;
+    margin-top: 50px;
+    z-index: 10;
+    // background-color: #222d32;
+    transition: all 0.3s ease-in-out;
+    .menu{
+      overflow-y: auto;
+      height: calc(~'100vh - 50px');
+      border-right: none;
+    }
+    .sidebar-toggle{
+      position: relative;
+      width: 100%;
+      height: 39px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+      //background-color: #2a3d5a;
+      color: #ffffff;
+      cursor: pointer;
+      .icon-left{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        width: 64px;
+        height: 100%;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  .app-body {
+    margin-left: 230px;
+    -webkit-transition: margin-left 0.3s ease-in-out;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  .main-container {
+    padding: 6px;
+    min-height: calc(~'100vh - 90px');
+    // background-color: #fff;
+  }
+}
+// 顶部
+.header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  height: 50px;
+  background-color: #12afe3; //theme
+  z-index: 10;
+  .logo {
+    .min {
+      display: none;
+    }
+    width: 230px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    background-color: #12afe3; //theme
+    -webkit-transition: width 0.35s;
+    transition: all 0.3s ease-in-out;
+  }
+  .right {
+    position: absolute;
+    right: 0;
+  }
+  .header-btn {
+    .el-badge__content {
+      top: 14px;
+      right: 7px;
+      text-align: center;
+      font-size: 9px;
+      padding: 0 3px;
+      background-color: #e44848;
+      color: #fff;
+      border: none;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: .25em;
+    }
+    overflow: hidden;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    padding: 0 14px;
+    color: #fff;
+    &:hover {
+      background-color: #2fa4c9; //theme hover
+    }
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 22px;
+      vertical-align: middle;
+    }
+  }
+
+  .app-breadcrumb.el-breadcrumb {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 50px;
+    margin-left: 10px;
+    .redirect{
+      color: #ffffff;
+    }
+    .redirect:hover{
+      color: #f0f0f0;
+    }
+    .no-redirect {
+      color: #f1f0f0;
+      cursor: text;
+    }
+    .el-breadcrumb__separator{
+      color: #f1f0f0;
+    }
+  }
+}
+// 折叠菜单
+.sidebar-toggle{
+  .header {
+    .logo {
+      .big {
+        display: none;
+      }
+      .min {
+        display: block;
+      }
+      width: 64px;
+    }
+  }
+  .aside{
+    .sidebar-toggle{
+      .icon-left{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .main {
+    .app-body {
+      margin-left: 64px;
+    }
+  }
+}
+// 隐藏菜单
+.sidebar-close{
+  .header {
+    .logo {
+      width: 0;
+      overflow: hidden;
+    }
+    .header-btn{
+      .icon-left{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .aside{
+   margin-left: -230px;
+  }
+  .main {
+    .app-body {
+      margin-left: 0;
+    }
+  }
+}
+.sidebar-toggle.sidebar-close{
+  .aside{
+    margin-left: -64px;
+  }
+}
+.el-menu--vertical {
+  min-width: 190px;
+}
+.setting-category {
+  padding:10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+// ===========================首页导航
+.nav-bar {
+  margin-top: 50px;
+  height: 38px;
+  width: 100%;
+  z-index: 8;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+  .nav-bar-tag {
+    height: 26px;
+    color: #495060;
+    margin: 6px 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+    line-height: 26px;
+    border: 1px solid #ebeef5;
+    border-radius: 2px;
+    display: inline-block;
+    .close-box {
+      display: inline-block;
+      height: 100%;
+      border-left: 1px solid #fff;
+      //border-left: 0px solid #ebeef5;
+      margin-left: 6px;
+    }
+    &:hover {
+      opacity: 0.85;
+      //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+      //border-color: #3d8dbc;
+    }
+    .point {
+      display: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: auto 0;
+      position: relative;
+      background: #fff;
+    }
+    .el-icon-close {
+      font-weight: bolder;
+      margin-left: 6px;
+      &:hover {
+        color: #ff0000;
+      }
+    }
+  }
+  .active {
+    border: 1px solid #12afe3; //theme
+    background: #12afe3; //theme
+    color: #fff;
+    .point {
+      display: inline-block;
+    }
+  }
+  .scroll-container {
+    flex: 1;
+    height: 100%;
+  }
+  .contextmenu {
+    margin: 0;
+    background: #fff;
+    z-index: 100;
+    position: absolute;
+    list-style-type: none;
+    padding: 5px 0;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+    li {
+      margin: 0;
+      padding: 7px 16px;
+      cursor: pointer;
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+}
+
+// ===========================头像上传样式
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #12afe3;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  display: block;
+}

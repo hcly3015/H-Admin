@@ -37,9 +37,10 @@ export default {
     closeall: '关闭所有',
     home: '首页',
     userlist: '用户列表',
-    permslist: '权限列表',
-    rolelist: '角色列表',
-    tablelist: '列表数据'
+    permssetting: '权限设置',
+    rolesetting: '角色设置',
+    tablelist: '列表数据',
+    goodslist: '商品列表'
   },
   other: {
     inputusername: '请输入用户名',
@@ -55,6 +56,7 @@ export default {
     lastloginplace: '上次登录地点'
   },
 
+  // 用户管理
   usermanager: {
     username: '用户名',
     sex: '性别',
@@ -69,5 +71,12 @@ export default {
     inputname: '请输入姓名',
     uploadheadtypeerror: '上传头像图片只能是JPG格式',
     uploadheadsizeerror: '上传头像图片大小不能超过2MB'
+  },
+
+  // 商品管理
+  goodslist: {
+    goods_code: '商品编码',
+    goods_name: '商品名称',
+    mnemonic_code: '助记码'
   }
 }

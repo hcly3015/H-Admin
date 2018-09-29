@@ -1,99 +1,87 @@
 var menu = [
   {
     'id': 1,
-    'parentId': 0,
-    'sort': 0,
     'cn_title': '首页',
     'ft_title': '首頁',
     'en_title': 'Home',
     'path': '/dashboard',
-    'icon': 'fa fa-dashboard'
+    'icon': 'fa fa-dashboard',
+    'sort': 1,
+    'parentId': 0
   },
   {
     'id': 2,
-    'parentId': 0,
-    'sort': 1,
     'cn_title': '用户管理',
     'ft_title': '用戶管理',
     'en_title': 'User Manager',
-    'path': 'usermanage',
+    'path': 'usermanager',
     'icon': 'fa fa-user-circle-o',
+    'sort': 2,
+    'parentId': 0,
     'children': [
       {
         'id': 21,
-        'parentId': 2,
-        'sort': 0,
         'cn_title': '用户列表',
         'ft_title': '用戶列表',
         'en_title': 'User List',
         'path': '/userlist',
-        'icon': 'is-children fa fa-list-alt'
+        'icon': 'is-children fa fa-list-alt',
+        'sort': 1,
+        'parentId': 2
       }
     ]
   },
   {
     'id': 3,
+    'cn_title': '商品管理',
+    'ft_title': '商品管理',
+    'en_title': 'Goods Manager',
+    'path': 'goodsmanager',
+    'icon': 'fa fa-product-hunt',
+    'sort': 1,
     'parentId': 0,
-    'sort': 2,
-    'cn_title': '权限管理',
-    'ft_title': '權限管理',
-    'en_title': 'Permission Manager',
-    'path': 'permsmanage',
-    'icon': 'fa fa-key',
     'children': [
       {
         'id': 31,
-        'parentId': 3,
-        'sort': 0,
-        'cn_title': '权限列表',
-        'ft_title': '權限列表',
-        'en_title': 'Permission List',
-        'path': '/permslist',
-        'icon': 'is-children fa fa-list-alt'
-      },
-      {
-        'id': 32,
-        'parentId': 3,
+        'cn_title': '商品列表',
+        'ft_title': '商品列表',
+        'en_title': 'Goods List',
+        'path': '/goods/goodslist',
+        'icon': 'is-children fa fa-list-alt',
         'sort': 1,
-        'cn_title': '角色列表',
-        'ft_title': '角色列表',
-        'en_title': 'Role List',
-        'path': '/rolelist',
-        'icon': 'is-children fa fa-list-alt'
+        'parentId': 3
       }
     ]
   },
   {
-    'id': 4,
+    'id': 100,
+    'cn_title': '系统管理',
+    'ft_title': '系統管理',
+    'en_title': 'System Manager',
+    'path': 'systemmanager',
+    'icon': 'fa fa-key',
+    'sort': 1,
     'parentId': 0,
-    'sort': 3,
-    'cn_title': '测试管理',
-    'ft_title': '测试管理',
-    'en_title': 'Test Manager',
-    'path': 'testmanage',
-    'icon': 'fa fa-file-text-o',
     'children': [
       {
-        'id': 41,
-        'parentId': 4,
-        'sort': 0,
-        'cn_title': '网格列表',
-        'ft_title': '網格列表',
-        'en_title': 'Grid List',
-        'path': '',
-        'icon': 'is-children fa fa-database',
-        'children': [
-          {
-            'id': 411,
-            'parentId': 41,
-            'sort': 0,
-            'cn_title': '列表数据',
-            'ft_title': '列表數據',
-            'en_title': 'Table List',
-            'path': '/test/tablelist',
-            'icon': 'is-children fa fa-list-alt'
-          }
-        ]
+        'id': 1001,
+        'cn_title': '权限设置',
+        'ft_title': '權限設置',
+        'en_title': 'Permission Setting',
+        'path': '/permssetting',
+        'icon': 'is-children fa fa-list-alt',
+        'sort': 1,
+        'parentId': 100
+      },
+      {
+        'id': 1002,
+        'cn_title': '角色设置',
+        'ft_title': '角色設置',
+        'en_title': 'Role Setting',
+        'path': '/rolesetting',
+        'icon': 'is-children fa fa-list-alt',
+        'sort': 2,
+        'parentId': 100
       }
     ]
   }

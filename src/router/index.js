@@ -5,10 +5,12 @@ import Index from '@/views/Index/Index'
 import Login from '@/views/Login/Login'
 import Dashboard from '@/views/Dashboard/Dashboard'
 
-import UserList from '@/views/UserManage/UserList'
+import UserList from '@/views/UserManager/UserList'
 
-import PermsList from '@/views/PermsManage/PermsList'
-import RoleList from '@/views/PermsManage/RoleList'
+import GoodsList from '@/views/GoodsManager/GoodsList'
+
+import PermsSetting from '@/views/PermsManager/PermsSetting'
+import RoleSetting from '@/views/PermsManager/RoleSetting'
 
 Vue.use(Router)
 
@@ -55,20 +57,36 @@ export default new Router({
           }
         },
         {
-          path: '/permslist',
-          name: 'permslist',
-          component: PermsList,
+          path: '/permssetting',
+          name: 'permssetting',
+          component: PermsSetting,
           meta: {
-            title: 'permslist',
+            title: 'permssetting',
             keepAlive: true
           }
         },
         {
-          path: '/rolelist',
-          name: 'rolelist',
-          component: RoleList,
+          path: '/rolesetting',
+          name: 'rolesetting',
+          component: RoleSetting,
           meta: {
-            title: 'rolelist',
+            title: 'rolesetting',
+            keepAlive: true
+          }
+        }
+      ]
+    },
+    {
+      path: '/goods',
+      component: Index,
+      redirect: '/goods/goodslist',
+      children: [
+        {
+          path: 'goodslist',
+          name: 'goodslist',
+          component: GoodsList,
+          meta: {
+            title: 'goodslist',
             keepAlive: true
           }
         }
@@ -82,7 +100,7 @@ export default new Router({
         {
           path: 'tablelist',
           name: 'tablelist',
-          component: () => import('@/views/TestManage/TableList'),
+          component: () => import('@/views/TestManager/TableList'),
           meta: {
             title: 'tablelist',
             keepAlive: false

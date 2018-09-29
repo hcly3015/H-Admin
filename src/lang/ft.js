@@ -37,9 +37,10 @@ export default {
     closeall: '關閉所有',
     home: '首頁',
     userlist: '用戶列表',
-    permslist: '權限列表',
-    rolelist: '角色列表',
-    tablelist: '列表數據'
+    permssetting: '權限設置',
+    rolesetting: '角色設置',
+    tablelist: '列表數據',
+    goodslist: '商品列表'
   },
   other: {
     inputusername: '請輸入用戶名',
@@ -55,6 +56,7 @@ export default {
     lastloginplace: '上次登錄地點'
   },
 
+  // 用户管理
   usermanager: {
     username: '用戶名',
     sex: '性別',
@@ -69,5 +71,12 @@ export default {
     inputname: '請輸入姓名',
     uploadheadtypeerror: '上傳頭像圖片只能是JPG格式',
     uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB'
+  },
+
+  // 商品管理
+  goodslist: {
+    goods_code: '商品編碼',
+    goods_name: '商品名稱',
+    mnemonic_code: '助記碼'
   }
 }

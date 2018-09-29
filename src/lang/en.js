@@ -37,9 +37,10 @@ export default {
     closeall: 'Close All',
     home: 'Home',
     userlist: 'User List',
-    permslist: 'Permission List',
-    rolelist: 'Role List',
-    tablelist: 'Table List'
+    permssetting: 'Permission Setting',
+    rolesetting: 'Role Setting',
+    tablelist: 'Table List',
+    goodslist: 'Goods List'
   },
   other: {
     inputusername: 'Enter one user name',
@@ -55,6 +56,7 @@ export default {
     lastloginplace: 'Last login place'
   },
 
+  // 用户管理
   usermanager: {
     username: 'User name',
     sex: 'Sex',
@@ -69,5 +71,12 @@ export default {
     inputname: 'Please input your name',
     uploadheadtypeerror: 'Upload head picture can only be JPG format',
     uploadheadsizeerror: 'Upload head image size can not exceed 2MB'
+  },
+
+  // 商品管理
+  goodslist: {
+    goods_code: 'Goods code',
+    goods_name: 'Goods name',
+    mnemonic_code: 'Mnemonic code'
   }
 }

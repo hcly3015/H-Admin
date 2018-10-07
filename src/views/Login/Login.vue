@@ -30,7 +30,7 @@
 import axios from '../../axios/axios.js'
 
 export default {
-  data() {
+  data () {
     return {
       username: 'admin',
       password: '123456',
@@ -46,15 +46,15 @@ export default {
       ]
     }
   },
-  mounted() {
+  mounted () {
     this.$i18n.locale = this.lang
-    this.$store.dispatch("SetLang", this.lang)
+    this.$store.dispatch('SetLang', this.lang)
     this.usernamePlaceHolder = this.$t('other.inputusername')
     this.passwordPlaceHolder = this.$t('other.inputpassword')
   },
   methods: {
     // 提交表单
-    login() {
+    login () {
       this.loginLoading = true
       if (this.username.length === 0) {
         this.loginLoading = false
@@ -74,10 +74,10 @@ export default {
         if (data.success) {
           this.msgSuccess(this.$t('other.loginsuccess'))
           var userInfo = {
-            "name": data.username,
-            "avatar": data.avatar,
-            "token": data.token,
-            "createtime": data.createtime
+            'name': data.username,
+            'avatar': data.avatar,
+            'token': data.token,
+            'createtime': data.createtime
           }
           this.$store.dispatch('UserLogin', JSON.stringify(userInfo))
 
@@ -85,15 +85,14 @@ export default {
           this.$router.push({ path: '/' })
         } else {
           this.msgInfo(data.msg)
-          return
         }
       })
       this.loginLoading = false
     },
-    changeLang(val) {
+    changeLang (val) {
       this.lang = val
       this.$i18n.locale = val
-      this.$store.dispatch("SetLang", val)
+      this.$store.dispatch('SetLang', val)
       this.usernamePlaceHolder = this.$t('other.inputusername')
       this.passwordPlaceHolder = this.$t('other.inputpassword')
     }

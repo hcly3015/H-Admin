@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       editVisible: false,
       editForm: {
@@ -62,7 +62,7 @@ export default {
       }
       this.editVisible = true
       this.$nextTick(() => {
-        //加载数据
+        // 加载数据
       })
     },
     editSubmit: function () {

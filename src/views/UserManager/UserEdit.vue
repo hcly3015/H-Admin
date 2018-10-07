@@ -42,7 +42,7 @@
 import axios from '../../axios/axios.js'
 
 export default {
-  data() {
+  data () {
     return {
       editVisible: false,
       editLoading: false,
@@ -64,7 +64,7 @@ export default {
       },
       uploadImageUrl: '',
       uploadHeaders: {
-        Authorization: "token " + this.$store.state.token
+        Authorization: 'token ' + this.$store.state.token
       }
     }
   },
@@ -80,12 +80,12 @@ export default {
       }
       this.editVisible = true
       this.$nextTick(() => {
-        //加载数据
+        // 加载数据
       })
     },
     editSubmit: function () {
-      this.editLoading = true;
-      var userObj = this.editForm;
+      this.editLoading = true
+      var userObj = this.editForm
       axios.userRegister(userObj).then((response) => {
         this.editLoading = false
         if (response.data.success) {
@@ -96,15 +96,15 @@ export default {
       })
       this.editLoading = false
     },
-    handleAvatarSuccess(res, file) {
+    handleAvatarSuccess (res, file) {
       if (res.success) {
         this.editForm.avatar = res.msg
         this.uploadImageUrl = URL.createObjectURL(file.raw)
       }
     },
-    beforeAvatarUpload(file, fileList) {
-      const isJPG = file.type === 'image/png';
-      const isLt2M = file.size / 1024 / 1024 < 2;
+    beforeAvatarUpload (file, fileList) {
+      const isJPG = file.type === 'image/png'
+      const isLt2M = file.size / 1024 / 1024 < 2
       if (!isJPG) {
         this.msgWarning(this.$t('usermanager.uploadheadtypeerror'))
       }

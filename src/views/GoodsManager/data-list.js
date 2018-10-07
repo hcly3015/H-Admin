@@ -1,6 +1,7 @@
 var data = {
   'name': 'goodsManager',
-  'search': [{
+  'search': [
+    {
       'name': 'goods_code',
       'title': '商品编码',
       'type': 'string'
@@ -18,7 +19,8 @@ var data = {
   ],
   'grid': {
     'toolbar': ['add', 'refresh'],
-    'column': [{
+    'column': [
+      {
         'name': 'goods_picture',
         'title': '图片',
         'type': 'string',
@@ -95,7 +97,8 @@ var data = {
         'template': ''
       }
     ],
-    'operation': [{
+    'operation': [
+      {
         'name': 'edit',
         'type': 'text'
       },

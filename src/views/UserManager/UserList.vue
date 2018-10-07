@@ -121,12 +121,12 @@ export default {
     }
   },
   created () {
-    this.getAllUsers();
+    this.getAllUsers()
   },
   mounted: function () {
     this.$nextTick(() => {
       var that = this
-      // 设置表格高度 
+      // 设置表格高度
       that.tableMaxHeight = window.innerHeight - that.$refs.table.$el.offsetTop - 8
       // 监听window的resize事件
       window.onresize = function setTableHeight () {
@@ -139,12 +139,12 @@ export default {
   },
   methods: {
     handleSizeChange: function (val) {
-      this.tablePageSize = val;
-      this.getAllUsers();
+      this.tablePageSize = val
+      this.getAllUsers()
     },
     handleCurrentChange: function (val) {
-      this.tablePage = val;
-      this.getAllUsers();
+      this.tablePage = val
+      this.getAllUsers()
     },
     handleReset: function (formName) {
       this.$refs[formName].resetFields()
@@ -204,9 +204,9 @@ export default {
       }
       if (createtime !== '' && createtime !== null) {
         if (createtime.length > 1) {
-          var ctimeStart = createtime[0].substring(0, 10) + " 23:59:59"
-          var ctiemEnd = createtime[1].substring(0, 10) + " 23:59:59"
-          paras.createtime = ctimeStart + "," + ctiemEnd
+          var ctimeStart = createtime[0].substring(0, 10) + ' 23:59:59'
+          var ctiemEnd = createtime[1].substring(0, 10) + ' 23:59:59'
+          paras.createtime = ctimeStart + ',' + ctiemEnd
         }
       }
       axios.userList(paras).then((response) => {
@@ -215,20 +215,21 @@ export default {
           this.tableTotal = response.data.total
           this.tableDatas = response.data.result
         } else if (response.status === 401) {
-          //不成功跳转回登录页
+          // 不成功跳转回登录页
           this.$router.push('/login')
-          //并且清除掉这个token
+          // 并且清除掉这个token
           this.$store.dispatch('UserLogout')
         }
       })
     },
-    //时间格式化
+
+    // 时间格式化
     dateFormat: function (row, column) {
       var date = row[column.property]
-      if (date == undefined) {
-        return ""
+      if (date === undefined) {
+        return ''
       }
-      return moment(date).format("YYYY-MM-DD HH:mm:ss");
+      return moment(date).format('YYYY-MM-DD HH:mm:ss')
     }
   }
 }

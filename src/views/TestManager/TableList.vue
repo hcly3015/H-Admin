@@ -73,7 +73,7 @@
 import TableEdit from './TableEdit'
 
 export default {
-  data() {
+  data () {
     return {
       tableMaxHeight: 500,
       editVisible: false,
@@ -212,7 +212,7 @@ export default {
       // 设置表格高度 
       that.tableMaxHeight = window.innerHeight - that.$refs.table.$el.offsetTop - 8
       // 监听window的resize事件
-      window.onresize = function setTableHeight() {
+      window.onresize = function setTableHeight () {
         that.tableMaxHeight = window.innerHeight - that.$refs.table.$el.offsetTop - 8
       }
     })
@@ -248,7 +248,7 @@ export default {
 
 <style lang="scss" scoped>
 .mainpage {
-  display: flex;
-  flex-flow: column;
+	display: flex;
+	flex-flow: column;
 }
 </style>

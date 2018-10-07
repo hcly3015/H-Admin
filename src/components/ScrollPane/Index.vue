@@ -7,16 +7,16 @@
 </template>
 
 <script>
-const padding = 3; // tag's padding
+const padding = 3 // tag's padding
 export default {
   name: 'scrollPane',
-  data() {
+  data () {
     return {
       left: 0
     }
   },
   methods: {
-    handleScroll(e) {
+    handleScroll (e) {
       // console.log(e.wheelDelta +'---'+ -e.deltaY);
       const eventDelta = e.wheelDelta || -e.deltaY * 3
       const $container = this.$refs.scrollContainer
@@ -37,7 +37,7 @@ export default {
         }
       }
     },
-    moveToTarget($target) {
+    moveToTarget ($target) {
       const $container = this.$refs.scrollContainer
       const $containerWidth = $container.offsetWidth
       const $targetLeft = $target.offsetLeft
@@ -59,15 +59,16 @@ export default {
 
 <style lang="less" scoped>
 .scroll-container {
-  // cursor: ew-resize;
-  white-space: nowrap;
-  position: relative;
-  overflow: hidden;
+	// cursor: ew-resize;
+	white-space: nowrap;
+	position: relative;
+	overflow: hidden;
   width: 100%;
-  .scroll-wrapper {
-    padding: 0 4px;
-    position: absolute;
-    transition: left 0.3s ease-in-out;
-  }
+  
+	.scroll-wrapper {
+		padding: 0 4px;
+		position: absolute;
+		transition: left 0.3s ease-in-out;
+	}
 }
 </style>

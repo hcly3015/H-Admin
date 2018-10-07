@@ -76,9 +76,9 @@ export default {
                   response.data.data.goods_picture
                   : ''
             } else if (response.status === 401) {
-              //不成功跳转回登录页
+              // 不成功跳转回登录页
               this.$router.push('/login')
-              //并且清除掉这个token
+              // 并且清除掉这个token
               this.$store.dispatch('UserLogout')
             }
           })

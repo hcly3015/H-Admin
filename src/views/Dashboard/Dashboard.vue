@@ -69,14 +69,14 @@
 
 
 export default {
-  data() {
+  data () {
     return {
       userName: 'Administrator',
       userAvatar: ''
     }
   },
-  mounted() {
-    var userInfo = sessionStorage.getItem(this.$Config.userInfo);
+  mounted () {
+    var userInfo = sessionStorage.getItem(this.$Config.userInfo)
     if (userInfo) {
       userInfo = JSON.parse(userInfo)
       this.userName = userInfo.name || ''
@@ -84,7 +84,7 @@ export default {
     }
   },
   computed: {
-    role() {
+    role () {
       return this.userName === 'admin' ? this.$t('common.admin') : this.$t('common.user')
     }
   }

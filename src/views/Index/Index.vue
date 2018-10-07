@@ -82,13 +82,13 @@
 import Screenfull from 'screenfull'
 import NavBar from './NavBar'
 
-import Bus from '../../common/bus'
+// import Bus from '../../common/bus'
 import Menu from '../../menu'
 
 import MenuTree from '@/components/MenuTree/MenuTree'
 
 export default {
-  data() {
+  data () {
     return {
       userName: 'Administrator',
       userAvatar: '',
@@ -105,14 +105,14 @@ export default {
     'MenuTree': MenuTree
   },
   watch: {
-    $route() {
+    $route () {
       this.getBreadcrumb()
     }
   },
-  created() {
+  created () {
     this.getBreadcrumb()
   },
-  mounted() {
+  mounted () {
     var userInfo = this.$store.state.userInfo
     if (userInfo) {
       userInfo = JSON.parse(userInfo)
@@ -126,7 +126,7 @@ export default {
 
   },
   methods: {
-    getBreadcrumb() {
+    getBreadcrumb () {
       let matched = this.$route.matched.filter(item => item.name)
       const first = matched[0]
       if (first && first.name.trim().toLocaleLowerCase() !== 'Dashboard'.toLocaleLowerCase()) {
@@ -134,38 +134,41 @@ export default {
       }
       this.levelList = matched
     },
-    NavBarWidth() {
-      let navBar = document.getElementById('nav-bar');
-      if (!navBar) return;
+    NavBarWidth () {
+      let navBar = document.getElementById('nav-bar')
+      if (!navBar) return
       let sidebarClose = document.body.classList.contains('sidebar-close')
-      if (sidebarClose) { navBar.style.width = '100%'; return; }
-      if (this.isCollapse) navBar.style.width = 'calc(100% - 64px)';
-      else navBar.style.width = 'calc(100% - 230px)';
+      if (sidebarClose) {
+        navBar.style.width = '100%'
+        return
+      }
+      if (this.isCollapse) navBar.style.width = 'calc(100% - 64px)'
+      else navBar.style.width = 'calc(100% - 230px)'
     },
-    toggleGrayMode() {
-      document.body.classList.toggle("gray-mode")
+    toggleGrayMode () {
+      document.body.classList.toggle('gray-mode')
     },
     // 隐藏
-    hiddenSidebar(e) {
-      e.preventDefault();
-      document.body.classList.toggle('sidebar-close');
-      this.NavBarWidth();
+    hiddenSidebar (e) {
+      e.preventDefault()
+      document.body.classList.toggle('sidebar-close')
+      this.NavBarWidth()
     },
     // 折叠
-    toggleSidebar(e) {
-      e.preventDefault();
+    toggleSidebar (e) {
+      e.preventDefault()
       if (this.isCollapse) {
         document.body.classList.remove('sidebar-toggle')
         this.siteName = this.$Config.siteName
-        this.isCollapse = false;
+        this.isCollapse = false
       } else {
         document.body.classList.add('sidebar-toggle')
-        this.isCollapse = true;
+        this.isCollapse = true
       }
-      this.NavBarWidth();
+      this.NavBarWidth()
     },
     // 全屏
-    fullScreenToggle() {
+    fullScreenToggle () {
       if (!Screenfull.enabled) {
         this.msgWarning(this.$t('other.notfullscreen'))
         return false
@@ -173,15 +176,15 @@ export default {
       Screenfull.toggle()
     },
     // 退出
-    logout() {
+    logout () {
       this.$store.dispatch('UserLogout')
       this.$router.push({ path: '/login' })
     },
     // 切换语言
-    changeLang(val) {
+    changeLang (val) {
       this.langName = this.$t('lang.' + val)
       this.lang = val
-      this.$store.dispatch("SetLang", val)
+      this.$store.dispatch('SetLang', val)
       this.$i18n.locale = val
     }
   }

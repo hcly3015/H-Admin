@@ -1,6 +1,7 @@
 var data = {
   'name': 'goodsManager',
-  'forms': [{
+  'forms': [
+    {
       'name': 'goods_code',
       'title': '商品编码',
       'type': 'string'

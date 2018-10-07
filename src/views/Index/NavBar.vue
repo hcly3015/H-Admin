@@ -21,7 +21,7 @@
 import ScrollPane from '../../components/ScrollPane/Index'
 
 export default {
-  data() {
+  data () {
     return {
       navs: [],
       visible: false,
@@ -37,7 +37,7 @@ export default {
     '$route': {
       handler: function () {
         let index = this.$Func.hasValInArrayObj(this.navs, 'path', this.$route.path)
-        if (index != -1) return
+        if (index !== -1) return
         this.navs.push({
           path: this.$route.path,
           title: this.$route.meta.title,
@@ -45,7 +45,7 @@ export default {
       },
       deep: true
     },
-    visible(value) {
+    visible (value) {
       if (value) {
         document.body.addEventListener('click', this.closeMenu)
       } else {
@@ -54,17 +54,17 @@ export default {
     }
   },
   methods: {
-    openMenu(tag, e) {
+    openMenu (tag, e) {
       this.visible = true
       this.selectedTag = tag
       const offsetLeft = this.$el.getBoundingClientRect().left // container margin left
       this.left = e.clientX - offsetLeft + 15 // 15: margin right
       this.top = e.clientY - 45
     },
-    closeMenu() {
+    closeMenu () {
       this.visible = false
     },
-    closeSelectedTag(tag) {
+    closeSelectedTag (tag) {
       let thisPath = ''
       let nv = this.navs
       for (var i = 0; i < nv.length; i++) {
@@ -74,11 +74,11 @@ export default {
           break
         }
       }
-      if (thisPath == this.$route.path) {
+      if (thisPath === this.$route.path) {
         this.$router.push(nv[(nv.length - 1)].path)
       }
     },
-    moveToCurrentTag() {
+    moveToCurrentTag () {
       const tags = this.$refs.tag
       this.$nextTick(() => {
         for (const tag of tags) {
@@ -89,7 +89,7 @@ export default {
         }
       })
     },
-    closeOthersTags() {
+    closeOthersTags () {
       if (this.navs.length === 1) return
       var tagObj = ''
       var thisPath = this.selectedTag.path
@@ -102,7 +102,7 @@ export default {
       this.navs = tagObj
       this.$router.push(tagObj[0].path)
     },
-    closeAllTags() {
+    closeAllTags () {
       if (this.navs.length === 1) return
       this.navs = []
       this.$router.push('/')

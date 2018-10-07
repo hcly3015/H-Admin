@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {}
   },
   props: {
@@ -24,10 +24,10 @@ export default {
     }
   },
   methods: {
-    handleSizeChange: function(size) {
+    handleSizeChange: function (size) {
       this.$emit('pageSizeChange', size)
     },
-    handleCurrentChange: function(currentPage) {
+    handleCurrentChange: function (currentPage) {
       this.$emit('currentPageChange', currentPage)
     }
   }

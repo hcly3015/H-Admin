@@ -62,9 +62,9 @@ export default {
           this.pageTotal = response.data.total
           this.gridDatas = response.data.result
         } else if (response.status === 401) {
-          //不成功跳转回登录页
+          // 不成功跳转回登录页
           this.$router.push('/login')
-          //并且清除掉这个token
+          // 并且清除掉这个token
           this.$store.dispatch('UserLogout')
         }
       })
@@ -72,18 +72,18 @@ export default {
 
     // 搜索栏-搜索
     searchData (forms) {
-      var goods_code = forms.goods_code
-      var goods_name = forms.goods_name
-      var mnemonic_code = forms.mnemonic_code
+      var goodscode = forms.goods_code
+      var goodsname = forms.goods_name
+      var mnemoniccode = forms.mnemonic_code
       let filter = {}
-      if (goods_code !== '' && goods_code !== null) {
-        filter.goods_code = goods_code
+      if (goodscode !== '' && goodscode !== null) {
+        filter.goods_code = goodscode
       }
-      if (goods_name !== '' && goods_name !== null) {
-        filter.goods_name = goods_name
+      if (goodsname !== '' && goodsname !== null) {
+        filter.goods_name = goodsname
       }
-      if (mnemonic_code !== '' && mnemonic_code !== null) {
-        filter.mnemonic_code = mnemonic_code
+      if (mnemoniccode !== '' && mnemoniccode !== null) {
+        filter.mnemonic_code = mnemoniccode
       }
       this.getAllGoods(filter)
     },

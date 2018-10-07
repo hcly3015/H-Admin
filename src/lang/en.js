@@ -25,7 +25,10 @@ export default {
     superadmin: 'Super administrator',
     admin: 'Administrators',
     user: 'Ordinary user',
-    success: 'Success'
+    success: 'Success',
+    operation: 'Operation',
+    uploadheadtypeerror: 'Upload head picture can only be JPG or PNG format',
+    uploadheadsizeerror: 'Upload head image size can not exceed 2MB'
   },
   user: {
     personal: 'Personal Center',
@@ -40,7 +43,8 @@ export default {
     permssetting: 'Permission Setting',
     rolesetting: 'Role Setting',
     tablelist: 'Table List',
-    goodslist: 'Goods List'
+    goodslist: 'Goods List',
+    goodscheck: 'Goods Check'
   },
   other: {
     inputusername: 'Enter one user name',
@@ -74,9 +78,17 @@ export default {
   },
 
   // 商品管理
-  goodslist: {
+  goodsmanager: {
     goods_code: 'Goods code',
     goods_name: 'Goods name',
-    mnemonic_code: 'Mnemonic code'
+    mnemonic_code: 'Mnemonic code',
+    purchase_price: 'Purchase price',
+    sales_price: 'Sales price',
+    minimum_price: 'Minimum price',
+    inventory_quantity: 'Stock quantity',
+    goods_color: 'Color',
+    goods_size: 'Size',
+    goods_picture: 'Picture',
+    remark: 'Remark'
   }
 }

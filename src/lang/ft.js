@@ -25,7 +25,10 @@ export default {
     superadmin: '超級管理員',
     admin: '管理員',
     user: '普通用戶',
-    success: '成功'
+    success: '成功',
+    operation: '操作',
+    uploadheadtypeerror: '上傳頭像圖片只能是JPG或PNG格式',
+    uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB'
   },
   user: {
     personal: '個人中心',
@@ -40,7 +43,8 @@ export default {
     permssetting: '權限設置',
     rolesetting: '角色設置',
     tablelist: '列表數據',
-    goodslist: '商品列表'
+    goodslist: '商品列表',
+    goodscheck: '商品盤點'
   },
   other: {
     inputusername: '請輸入用戶名',
@@ -74,9 +78,17 @@ export default {
   },
 
   // 商品管理
-  goodslist: {
+  goodsmanager: {
     goods_code: '商品編碼',
     goods_name: '商品名稱',
-    mnemonic_code: '助記碼'
+    mnemonic_code: '助記碼',
+    purchase_price: '商品進價',
+    sales_price: '銷售單價',
+    minimum_price: '最低售價',
+    inventory_quantity: '庫存數量',
+    goods_color: '顔色',
+    goods_size: '尺碼',
+    goods_picture: '圖片',
+    remark: '備注'
   }
 }

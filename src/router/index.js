@@ -8,6 +8,7 @@ import Dashboard from '@/views/Dashboard/Dashboard'
 import UserList from '@/views/UserManager/UserList'
 
 import GoodsList from '@/views/GoodsManager/GoodsList'
+import GoodsCheck from '@/views/GoodsCheck/GoodsCheck'
 
 import PermsSetting from '@/views/PermsManager/PermsSetting'
 import RoleSetting from '@/views/PermsManager/RoleSetting'
@@ -87,6 +88,15 @@ export default new Router({
           component: GoodsList,
           meta: {
             title: 'goodslist',
+            keepAlive: true
+          }
+        },
+        {
+          path: 'goodscheck',
+          name: 'goodscheck',
+          component: GoodsCheck,
+          meta: {
+            title: 'goodscheck',
             keepAlive: true
           }
         }

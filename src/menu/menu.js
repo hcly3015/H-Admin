@@ -54,6 +54,28 @@ var menu = [
     ]
   },
   {
+    'id': 4,
+    'cn_title': '库存管理',
+    'ft_title': '庫存管理',
+    'en_title': 'Stock Manager',
+    'path': 'stockmanager',
+    'icon': 'fa fa-product-hunt',
+    'sort': 1,
+    'parentId': 0,
+    'children': [
+      {
+        'id': 41,
+        'cn_title': '商品盘点',
+        'ft_title': '商品盤點',
+        'en_title': 'Goods Check',
+        'path': '/goods/goodscheck',
+        'icon': 'is-children fa fa-list-alt',
+        'sort': 1,
+        'parentId': 4
+      }
+    ]
+  },
+  {
     'id': 100,
     'cn_title': '系统管理',
     'ft_title': '系統管理',

@@ -4,7 +4,6 @@
 const fs = require('fs')
 
 function checkDirExist (dir) {
-  console.log(dir)
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir)
   }

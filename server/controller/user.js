@@ -211,7 +211,6 @@ const GetAllUsers = async (ctx) => {
 const DelUser = async (ctx) => {
   // 拿到要删除的用户id
   let userId = ctx.request.body.id
-  console.log(userId)
   if (userId !== '' && userId !== undefined) {
     await delUser(userId)
   }

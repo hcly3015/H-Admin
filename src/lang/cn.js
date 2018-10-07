@@ -25,7 +25,10 @@ export default {
     superadmin: '超级管理员',
     admin: '管理员',
     user: '普通用户',
-    success: '成功'
+    success: '成功',
+    operation: '操作',
+    uploadheadtypeerror: '上传头像图片只能是JPG或PNG格式',
+    uploadheadsizeerror: '上传头像图片大小不能超过2MB'
   },
   user: {
     personal: '个人中心',
@@ -40,7 +43,8 @@ export default {
     permssetting: '权限设置',
     rolesetting: '角色设置',
     tablelist: '列表数据',
-    goodslist: '商品列表'
+    goodslist: '商品列表',
+    goodscheck: '商品盘点'
   },
   other: {
     inputusername: '请输入用户名',
@@ -74,9 +78,17 @@ export default {
   },
 
   // 商品管理
-  goodslist: {
+  goodsmanager: {
     goods_code: '商品编码',
     goods_name: '商品名称',
-    mnemonic_code: '助记码'
+    mnemonic_code: '助记码',
+    purchase_price: '商品进价',
+    sales_price: '销售单价',
+    minimum_price: '最低售价',
+    inventory_quantity: '库存数量',
+    goods_color: '颜色',
+    goods_size: '尺码',
+    goods_picture: '图片',
+    remark: '备注'
   }
 }

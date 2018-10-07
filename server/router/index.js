@@ -39,6 +39,26 @@ module.exports = function () {
   router.use('/api', delUserRouter.routes(), delUserRouter.allowedMethods())
   router.use('/api', uploadPicRouter.routes(), uploadPicRouter.allowedMethods())
 
+  /***************************************************************
+   * 商品
+   **************************************************************/
+  const goodsController = require('../controller/goods.js')
+  const allGoodsRouter = new Router()
+  allGoodsRouter.get('/goods/list', checkToken, goodsController.GetAllGoods)
+  router.use('/api', allGoodsRouter.routes(), allGoodsRouter.allowedMethods())
+
+  const getGoodsByIdRouter = new Router()
+  getGoodsByIdRouter.get('/goods/get', checkToken, goodsController.GetGoodsById)
+  router.use('/api', getGoodsByIdRouter.routes(), getGoodsByIdRouter.allowedMethods())
+
+  const goodsNewAndUpdateRouter = new Router()
+  goodsNewAndUpdateRouter.post('/goods/update', checkToken, goodsController.GoodsNewAndUpdate)
+  router.use('/api', goodsNewAndUpdateRouter.routes(), goodsNewAndUpdateRouter.allowedMethods())
+
+  const goodsUploadPicRouter = new Router()
+  goodsUploadPicRouter.post('/goods/upload', checkToken, goodsController.GoodsUploadPic)
+  router.use('/api', goodsUploadPicRouter.routes(), goodsUploadPicRouter.allowedMethods())
+
   // 加载路由中间件
   return convert.compose([
     router.routes(),

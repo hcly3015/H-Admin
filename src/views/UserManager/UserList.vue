@@ -25,7 +25,7 @@
           </el-form-item>
         </el-row>
         <el-row>
-          <el-form-item style="margin-left:85px;">
+          <el-form-item style="margin-left:115px;">
             <el-button type="primary" icon="el-icon-search" @click="handleSearch()">{{$t('common.search')}}</el-button>
             <el-button type="info" icon="el-icon-remove-outline" @click="handleReset('searchForm')">{{$t('common.reset')}}</el-button>
           </el-form-item>
@@ -92,7 +92,7 @@ import axios from '../../axios/axios.js'
 import TableEdit from './UserEdit'
 
 export default {
-  data() {
+  data () {
     return {
       tableMaxHeight: 500,
       tableLoading: false,
@@ -120,7 +120,7 @@ export default {
       }
     }
   },
-  created() {
+  created () {
     this.getAllUsers();
   },
   mounted: function () {
@@ -129,7 +129,7 @@ export default {
       // 设置表格高度 
       that.tableMaxHeight = window.innerHeight - that.$refs.table.$el.offsetTop - 8
       // 监听window的resize事件
-      window.onresize = function setTableHeight() {
+      window.onresize = function setTableHeight () {
         that.tableMaxHeight = window.innerHeight - that.$refs.table.$el.offsetTop - 8
       }
     })

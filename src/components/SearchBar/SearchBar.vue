@@ -1,16 +1,16 @@
 <template>
   <div>
     <el-col :span="24" class="searchbar">
-      <el-form :model="search" :inline="true" ref="search">
+      <el-form :model="forms" :inline="true" ref="forms">
         <el-row>
-          <el-form-item v-for="(item,index) in searchList" :key="index" :label="$t(pageName.toLowerCase()+'.'+item.name)" :prop="item.name">
-            <el-input v-if="item.type===fieldType.string" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable style="width:240px;"></el-input>
+          <el-form-item v-for="(item,index) in searchForm" :key="index" :label="$t(pageName.toLowerCase()+'.'+item.name)" :prop="item.name">
+            <el-input v-if="item.type===fieldType.string" v-model="forms[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable style="width:240px"></el-input>
           </el-form-item>
         </el-row>
         <el-row>
-          <el-form-item style="margin-left:115px;">
-            <el-button type="primary" icon="el-icon-search" @click="handleSearch()">{{$t('common.search')}}</el-button>
-            <el-button type="info" icon="el-icon-remove-outline" @click="handleReset('searchForm')">{{$t('common.reset')}}</el-button>
+          <el-form-item style="margin-left:115px">
+            <el-button @click="handleSearchData" type="primary" icon="el-icon-search">{{$t('common.search')}}</el-button>
+            <el-button @click="handleResetData" type="info" icon="el-icon-remove-outline">{{$t('common.reset')}}</el-button>
           </el-form-item>
         </el-row>
       </el-form>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-
 const fieldType = {
   string: 'string',
   number: 'number',
@@ -27,23 +26,37 @@ const fieldType = {
 }
 
 export default {
-  data() {
+  data () {
+    let forms = {}
+    let deForms = this.searchForm
+    deForms.forEach((item, index) => {
+      if (item.type === fieldType.string) {
+        forms[item.name] = ''
+      }
+    })
+
     return {
       fieldType,
-      search: {
-
-      }
+      forms
     }
   },
   props: {
     pageName: {
       type: String
     },
-    searchList: {
+    searchForm: {
       type: Array,
-      default() {
+      default () {
         return []
       }
+    }
+  },
+  methods: {
+    handleSearchData: function () {
+      this.$emit('searchData', this.forms)
+    },
+    handleResetData: function () {
+      this.$refs['forms'].resetFields()
     }
   }
 }

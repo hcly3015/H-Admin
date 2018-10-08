@@ -1,27 +1,27 @@
 <template>
   <div class="useredit">
     <el-dialog v-dialog-drag :title="editTitle" :close-on-click-modal="false" :visible.sync="editVisible">
-      <el-form :model="editForm" label-width="80px" :rules="editFormRules" ref="editForm">
+      <el-form :model="editForm" :inline="true" label-width="80px" :rules="editFormRules" ref="editForm">
         <el-form-item :label="$t('usermanager.username')" prop="username" label-width="100px">
-          <el-input v-model="editForm.username"></el-input>
+          <el-input v-model="editForm.username" style="width:240px;"></el-input>
         </el-form-item>
         <el-form-item :label="$t('usermanager.sex')" label-width="100px">
-          <el-radio-group v-model="editForm.sex">
+          <el-radio-group v-model="editForm.sex" style="width:240px;">
             <el-radio class="radio" :label="1">{{$t('common.male')}}</el-radio>
             <el-radio class="radio" :label="0">{{$t('common.female')}}</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item :label="$t('usermanager.nick')" prop="nick" label-width="100px">
-          <el-input v-model="editForm.nick"></el-input>
+          <el-input v-model="editForm.nick" style="width:240px;"></el-input>
         </el-form-item>
         <el-form-item :label="$t('usermanager.email')" prop="email" label-width="100px">
-          <el-input v-model="editForm.email"></el-input>
+          <el-input v-model="editForm.email" style="width:240px;"></el-input>
         </el-form-item>
         <el-form-item :label="$t('usermanager.createtime')" label-width="100px">
-          <el-date-picker v-model="editForm.createtime" type="date"></el-date-picker>
+          <el-date-picker v-model="editForm.createtime" type="date" style="width:240px;"></el-date-picker>
         </el-form-item>
         <el-form-item :label="$t('usermanager.remark')" label-width="100px">
-          <el-input v-model="editForm.remark"></el-input>
+          <el-input v-model="editForm.remark" style="width:240px;"></el-input>
         </el-form-item>
         <el-form-item :label="$t('usermanager.headpic')" label-width="100px">
           <el-upload class="avatar-uploader" action="/api/user/upload" :show-file-list="false" :headers="uploadHeaders" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">

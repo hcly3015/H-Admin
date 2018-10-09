@@ -44,7 +44,8 @@ export default {
     rolesetting: 'Role Setting',
     tablelist: 'Table List',
     goodslist: 'Goods List',
-    goodscheck: 'Goods Check'
+    goodscheck: 'Goods Check',
+    collectingsilver: 'Collecting Silver'
   },
   other: {
     inputusername: 'Enter one user name',

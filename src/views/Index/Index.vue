@@ -22,6 +22,10 @@
         </transition-group>
       </el-breadcrumb>
       <div class="right">
+        <span class="header-btn" @click="collectingSilver">
+          <i class="el-icon-mobile-phone"></i>
+        </span>
+
         <span class="header-btn" @click="fullScreenToggle">
           <i class="fa fa-arrows-alt"></i>
         </span>
@@ -186,6 +190,11 @@ export default {
       this.lang = val
       this.$store.dispatch('SetLang', val)
       this.$i18n.locale = val
+    },
+
+    // 前台收银
+    collectingSilver(){
+      this.$router.push({ path: '/collectingsilver' })
     }
   }
 }

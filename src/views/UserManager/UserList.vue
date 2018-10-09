@@ -1,5 +1,5 @@
 <template>
-  <div class="userlist">
+  <div class="mainlist">
     <!--搜素栏-->
     <el-col :span="24" class="searchbar">
       <el-form :model="searchForm" :inline="true" ref="searchForm">

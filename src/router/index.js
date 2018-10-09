@@ -9,6 +9,7 @@ import UserList from '@/views/UserManager/UserList'
 
 import GoodsList from '@/views/GoodsManager/GoodsList'
 import GoodsCheck from '@/views/GoodsCheck/GoodsCheck'
+import CollectingSilver from '@/views/CollectingSilver/CollectingSilver'
 
 import PermsSetting from '@/views/PermsManager/PermsSetting'
 import RoleSetting from '@/views/PermsManager/RoleSetting'
@@ -101,6 +102,15 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/collectingsilver',
+      name: 'collectingsilver',
+      component: CollectingSilver,
+      meta: {
+        title: 'collectingsilver',
+        keepAlive: false
+      }
     },
     {
       path: '/test',

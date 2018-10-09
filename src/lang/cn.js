@@ -44,7 +44,8 @@ export default {
     rolesetting: '角色设置',
     tablelist: '列表数据',
     goodslist: '商品列表',
-    goodscheck: '商品盘点'
+    goodscheck: '商品盘点',
+    collectingsilver: '收银'
   },
   other: {
     inputusername: '请输入用户名',

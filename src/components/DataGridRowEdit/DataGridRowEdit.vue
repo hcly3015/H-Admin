@@ -3,14 +3,14 @@
     <el-col :span="24" style="padding: 5px 12px;background-color: #fff;border:1px solid #ebeef5">
       <el-button @click="handleNewRow" type="primary" icon="el-icon-plus"></el-button>
     </el-col>
-    <el-table :data="datas" :max-height="gridMaxHeight" v-loading="gridLoading" border highlight-current-row ref="table" style="width: 100%">
+    <el-table :data="datas" v-loading="gridLoading" border highlight-current-row ref="table" style="width: 100%">
       <el-table-column v-for="(item,index) in columns" :key="index" :prop="item.name" :label="$t(pageName.toLowerCase()+'.'+item.name)" :width="item.width">
         <template slot-scope="scope">
           <img v-if="item.template==='img'" :src="(scope.row[item.name]!==''&&scope.row[item.name]!==undefined)?$Config.serverAddress+scope.row[item.name]:''" alt="" style="width: 100%;height: 100%">
           <span v-else>{{ scope.row[item.name] }}</span>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('common.operation')" width="80">
+      <el-table-column :label="$t('common.operation')" width="100">
         <template slot-scope="scope">
           <el-button type="text" @click.native.prevent="handleDeleteRow(scope.$index, datas)" size="small">
             {{$t('common.delete')}}
@@ -25,7 +25,6 @@
 export default {
   data () {
     return {
-      gridMaxHeight: 500,
       gridLoading: false
     }
   },
@@ -44,17 +43,7 @@ export default {
     }
   },
   mounted: function () {
-    this.$nextTick(() => {
-      var that = this
-      // 设置表格高度
-      that.gridMaxHeight =
-        window.innerHeight - that.$refs.table.$el.offsetTop - 50
-      // 监听window的resize事件
-      window.onresize = function setTableHeight () {
-        that.gridMaxHeight =
-          window.innerHeight - that.$refs.table.$el.offsetTop - 50
-      }
-    })
+    
   },
   methods: {
     handleNewRow: function () {

@@ -7,7 +7,7 @@
       <el-aside style="background-color:#d3dce6;">
 
       </el-aside>
-      <el-main style="background-color:#e9eef3;">
+      <el-main style="background-color:#ecf0f5;">
         <el-row>
           <el-col :span="24" style="padding: 5px 12px;background-color: #fff;border:1px solid #ebeef5">
             <el-input style="float:right;width:200px;"></el-input>

@@ -1,8 +1,8 @@
 // 全局共同样式
 
 // ===========================折叠菜单隐藏内容文本
-.el-menu--collapse>div>.el-menu-item span, 
-.el-menu--collapse>div>.el-submenu>.el-submenu__title span {
+.el-menu--collapse > div > .el-menu-item span,
+.el-menu--collapse > div > .el-submenu > .el-submenu__title span {
   height: 0;
   width: 0;
   overflow: hidden;
@@ -34,4 +34,9 @@
 // ===========================网格列表
 .tablelist {
   padding-top: 5px;
+}
+
+.el-dialog__body {
+  max-height: calc(100vh - 250px);
+  overflow-y: scroll;
 }

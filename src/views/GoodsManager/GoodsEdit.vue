@@ -46,8 +46,13 @@ export default {
       editLoading: false,
 
       gridColumns: dataEdit.grid.column,
-      gridDatas: []
+      gridDatas: [],
+
+      dialogHeight: 200
     }
+  },
+  mounted: function () {
+    
   },
   components: {
     CommonForm,

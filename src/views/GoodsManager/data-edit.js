@@ -37,28 +37,28 @@ var data = {
         'name': 'purchase_price',
         'title': '商品进价',
         'type': 'number',
-        'width': '100',
+        'width': '140',
         'template': ''
       },
       {
         'name': 'sales_price',
         'title': '销售单价',
         'type': 'number',
-        'width': '100',
+        'width': '140',
         'template': ''
       },
       {
         'name': 'minimum_price',
         'title': '最低售价',
         'type': 'number',
-        'width': '100',
+        'width': '140',
         'template': ''
       },
       {
         'name': 'inventory_quantity',
         'title': '库存数量',
         'type': 'number',
-        'width': '100',
+        'width': '140',
         'template': ''
       },
       {

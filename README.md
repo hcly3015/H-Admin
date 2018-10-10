@@ -31,6 +31,7 @@ $ npm install  （建议使用淘宝镜像$ cnpm install）
 ``` bash
 $ npm run server
 ```
+
 ``` bash
 另外采用了PM2部署，在项目的根目录下新建了processes.json文件
 具体相关配置如下

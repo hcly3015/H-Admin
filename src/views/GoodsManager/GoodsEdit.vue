@@ -1,20 +1,13 @@
 <template>
   <div class="mainlist">
     <el-dialog v-dialog-drag :title="editTitle" :close-on-click-modal="false" :visible.sync="editVisible">
-      <el-form :model="forms" label-width="115px" ref="forms">
-        <el-form-item v-for="(item,index) in editForm" :key="index" :label="$t(pageName.toLowerCase()+'.'+item.name)" :prop="item.name">
-          <el-input v-if="item.type===fieldType.string" v-model="forms[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable>
-          </el-input>
-          <el-input-number v-if="item.type===fieldType.number" v-model="forms[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable>
-          </el-input-number>
-          <el-input v-if="item.type===fieldType.textarea" type="textarea" v-model="forms[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable>
-          </el-input>
-          <el-upload v-if="item.type===fieldType.picture" class="avatar-uploader" action="/api/goods/upload" :show-file-list="false" :headers="uploadHeaders" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
-            <img v-if="uploadImageUrl" :src="uploadImageUrl" class="avatar">
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-          </el-upload>
-        </el-form-item>
-      </el-form>
+      <!-- 表单 -->
+      <common-form :pageName="pageName" :formModels="formModels" :formProps="formProps"></common-form>
+
+      <!-- 明细网格 -->
+      <data-grid-row-edit :pageName="pageName" :columns="gridColumns" :datas="gridDatas" @gridNewRow="gridNewRow"></data-grid-row-edit>
+
+      <!-- 按钮 -->
       <div slot="footer" class="dialog-footer">
         <el-button @click.native="editVisible = false">{{$t('common.cancel')}}</el-button>
         <el-button type="primary" @click.native="handleEditSubmit" :loading="editLoading">{{$t('common.ok')}}</el-button>
@@ -24,43 +17,41 @@
 </template>
 
 <script>
-const fieldType = {
-  string: 'string',
-  number: 'number',
-  datetime: 'datetime',
-  textarea: 'textarea',
-  picture: 'picture'
-}
-
 import dataEdit from './data-edit.js'
 
+import CommonForm from '@/components/CommonForm/CommonForm'
+import DataGridRowEdit from '@/components/DataGridRowEdit/DataGridRowEdit'
+
+import Global from '@/components/Global/Global'
 import axios from '../../axios/axios.js'
 
 export default {
   data () {
-    let forms = {}
+    let formModels = {}
     let deForms = dataEdit.forms
     deForms.forEach((item, index) => {
-      if (item.type === fieldType.string) {
-        forms[item.name] = ''
+      if (item.type === Global.fieldType.string) {
+        formModels[item.name] = ''
       }
     })
 
     return {
       pageName: dataEdit.name,
-      editForm: dataEdit.forms,
+      formProps: dataEdit.forms,
 
-      fieldType,
-      forms,
+      formModels,
+
       editTitle: '',
       editVisible: false,
       editLoading: false,
 
-      uploadImageUrl: '',
-      uploadHeaders: {
-        Authorization: 'token ' + this.$store.state.token
-      }
+      gridColumns: dataEdit.grid.column,
+      gridDatas: []
     }
+  },
+  components: {
+    CommonForm,
+    DataGridRowEdit
   },
   methods: {
     init: function (goodsId) {
@@ -103,22 +94,14 @@ export default {
       })
       this.editLoading = false
     },
-    beforeAvatarUpload (file, fileList) {
-      const isImg = file.type === 'image/png' || file.type === 'image/jpeg'
-      const isLt2M = file.size / 1024 / 1024 < 2
-      if (!isImg) {
-        this.msgWarning(this.$t('common.uploadheadtypeerror'))
+    gridNewRow () {
+      let column = dataEdit.grid.column
+      let colItem = {}
+      for (let col in column) {
+        let field = column[col]['name']
+        colItem[field] = ''
       }
-      if (!isLt2M) {
-        this.msgWarning(this.$t('common.uploadheadsizeerror'))
-      }
-      return isImg && isLt2M
-    },
-    handleAvatarSuccess (res, file) {
-      if (res.success) {
-        this.forms.goods_picture = res.msg
-        this.uploadImageUrl = URL.createObjectURL(file.raw)
-      }
+      this.gridDatas.push(colItem)
     }
   }
 }

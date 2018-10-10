@@ -4,7 +4,7 @@
     <!-- <search-bar :pageName="pageName" :searchForm="searchForm" @searchData="searchData"></search-bar> -->
 
     <!-- 数据网格 -->
-    <data-grid :pageName="pageName" :toolbar="gridToolbar" :columns="gridColumn" :operation="gridOperation" :datas="gridDatas" @gridNewData="gridNewData" @gridRefresh="gridRefresh" @gridMethods="gridMethods"></data-grid>
+    <data-grid :pageName="pageName" :toolbar="gridToolbar" :columns="gridColumns" :operation="gridOperation" :datas="gridDatas" @gridNewData="gridNewData" @gridRefresh="gridRefresh" @gridMethods="gridMethods"></data-grid>
 
     <!-- 分页 -->
     <pagination :pageName="pageName" :pageTotal="pageTotal" @pageSizeChange="pageSizeChange" @currentPageChange="currentPageChange"></pagination>
@@ -30,7 +30,7 @@ export default {
       pageName: dataList.name,
       searchForm: dataList.search,
       gridToolbar: dataList.grid.toolbar,
-      gridColumn: dataList.grid.column,
+      gridColumns: dataList.grid.column,
       gridOperation: dataList.grid.operation,
 
       pageIndex: 1,

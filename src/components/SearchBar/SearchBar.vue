@@ -19,24 +19,20 @@
 </template>
 
 <script>
-const fieldType = {
-  string: 'string',
-  number: 'number',
-  datetime: 'datetime'
-}
+import Global from '@/components/Global/Global'
 
 export default {
   data () {
     let forms = {}
     let deForms = this.searchForm
     deForms.forEach((item, index) => {
-      if (item.type === fieldType.string) {
+      if (item.type === Global.fieldType.string) {
         forms[item.name] = ''
       }
     })
 
     return {
-      fieldType,
+      fieldType: Global.fieldType,
       forms
     }
   },

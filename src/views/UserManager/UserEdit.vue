@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import axios from '../../axios/axios.js'
+import api from '../../api/index.js'
 
 export default {
   data () {
@@ -86,7 +86,7 @@ export default {
     editSubmit: function () {
       this.editLoading = true
       var userObj = this.editForm
-      axios.userRegister(userObj).then((response) => {
+      api.user.userRegister(userObj).then((response) => {
         this.editLoading = false
         if (response.data.success) {
           this.msgSuccess(this.$t('common.success'))

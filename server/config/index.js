@@ -8,7 +8,10 @@ const mongodb = {
 // 端口
 const port = '8091'
 
+const baseApi = '/api'
+
 module.exports = {
   port,
-  mongodb
+  mongodb,
+  baseApi
 }

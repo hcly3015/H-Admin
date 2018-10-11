@@ -86,9 +86,9 @@
 </template>
 
 <script>
-import moment from 'moment/moment'
+import api from '../../api/index.js'
 
-import axios from '../../axios/axios.js'
+import moment from 'moment/moment'
 import TableEdit from './UserEdit'
 
 export default {
@@ -163,7 +163,7 @@ export default {
     },
     handleDelete: function (index, row) {
       this.dgConfirmWarning(this.$t('common.tips'), this.$t('common.isdelete')).then(() => {
-        axios.userDelete({ id: row._id }).then((response) => {
+        api.user.userDelete({ id: row._id }).then((response) => {
           if (response.data.success) {
             this.msgSuccess(this.$t('common.success'))
             this.handleRefresh()
@@ -209,11 +209,12 @@ export default {
           paras.createtime = ctimeStart + ',' + ctiemEnd
         }
       }
-      axios.userList(paras).then((response) => {
+
+      api.user.userList(paras).then((response) => {
         this.tableLoading = false
-        if (response.data.succsess) {
-          this.tableTotal = response.data.total
-          this.tableDatas = response.data.result
+        if (response.succsess) {
+          this.tableTotal = response.total
+          this.tableDatas = response.result
         } else if (response.status === 401) {
           // 不成功跳转回登录页
           this.$router.push('/login')

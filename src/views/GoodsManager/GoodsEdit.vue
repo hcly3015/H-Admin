@@ -17,13 +17,13 @@
 </template>
 
 <script>
+import api from '../../api/index.js'
+import Global from '@/components/Global/Global'
+
 import dataEdit from './data-edit.js'
 
 import CommonForm from '@/components/CommonForm/CommonForm'
 import DataGridRowEdit from '@/components/DataGridRowEdit/DataGridRowEdit'
-
-import Global from '@/components/Global/Global'
-import axios from '../../axios/axios.js'
 
 export default {
   data () {
@@ -59,7 +59,7 @@ export default {
         this.editVisible = true
         this.editTitle = this.$t('common.edit')
         this.$nextTick(() => {
-          axios.goodsById({ id: goodsId }).then(response => {
+          api.goods.goodsById({ id: goodsId }).then(response => {
             if (response.data.success) {
               this.forms = response.data.data
               this.uploadImageUrl =

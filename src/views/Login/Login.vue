@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import axios from '../../axios/axios.js'
+import api from '../../api/index.js'
 
 export default {
   data () {
@@ -70,21 +70,21 @@ export default {
         username: this.username,
         password: this.password
       }
-      axios.userLogin(loginForm).then(({ data }) => {
-        if (data.success) {
+      api.user.userLogin(loginForm).then(( response ) => {
+        if (response.success) {
           this.msgSuccess(this.$t('other.loginsuccess'))
           var userInfo = {
-            'name': data.username,
-            'avatar': data.avatar,
-            'token': data.token,
-            'createtime': data.createtime
+            'name': response.username,
+            'avatar': response.avatar,
+            'token': response.token,
+            'createtime': response.createtime
           }
           this.$store.dispatch('UserLogin', JSON.stringify(userInfo))
 
           // 跳到目标页
           this.$router.push({ path: '/' })
         } else {
-          this.msgInfo(data.msg)
+          this.msgInfo(response.msg)
         }
       })
       this.loginLoading = false

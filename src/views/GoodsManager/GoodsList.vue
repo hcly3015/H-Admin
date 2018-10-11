@@ -15,14 +15,14 @@
 </template>
 
 <script>
+import api from '../../api/index.js'
+
 import dataList from './data-list.js'
 
 import SearchBar from '@/components/SearchBar/SearchBar'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import Pagination from '@/components/Pagination/Pagination'
 import GoodsEdit from './GoodsEdit'
-
-import axios from '../../axios/axios.js'
 
 export default {
   data () {
@@ -57,10 +57,10 @@ export default {
         pageSize: this.pageSize
       }
       let paras = Object.assign(pageParas, filter)
-      axios.goodsList(paras).then(response => {
-        if (response.data.success) {
-          this.pageTotal = response.data.total
-          this.gridDatas = response.data.result
+      api.goods.goodsList(paras).then(response => {
+        if (response.success) {
+          this.pageTotal = response.total
+          this.gridDatas = response.result
         } else if (response.status === 401) {
           // 不成功跳转回登录页
           this.$router.push('/login')

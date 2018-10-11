@@ -27,6 +27,8 @@ export default {
     user: 'Ordinary user',
     success: 'Success',
     operation: 'Operation',
+    starttime: 'Start time',
+    endtime: 'End time',
     uploadheadtypeerror: 'Upload head picture can only be JPG or PNG format',
     uploadheadsizeerror: 'Upload head image size can not exceed 2MB'
   },
@@ -71,8 +73,8 @@ export default {
     headpic: 'Head portrait',
     remark: 'Remark',
     operation: 'Operation',
-    starttime: 'Start date',
-    endtime: 'End date',
+    starttime: 'Start time',
+    endtime: 'End time',
     inputname: 'Please input your name',
     uploadheadtypeerror: 'Upload head picture can only be JPG format',
     uploadheadsizeerror: 'Upload head image size can not exceed 2MB'
@@ -83,6 +85,7 @@ export default {
     goods_code: 'Goods code',
     goods_name: 'Goods name',
     mnemonic_code: 'Mnemonic code',
+    createtime: 'Create time',
     purchase_price: 'Purchase price',
     sales_price: 'Sales price',
     minimum_price: 'Minimum price',

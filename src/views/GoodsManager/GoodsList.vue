@@ -75,6 +75,7 @@ export default {
       var goodscode = forms.goods_code
       var goodsname = forms.goods_name
       var mnemoniccode = forms.mnemonic_code
+      var createtime = forms.createtime
       let filter = {}
       if (goodscode !== '' && goodscode !== null) {
         filter.goods_code = goodscode
@@ -84,6 +85,13 @@ export default {
       }
       if (mnemoniccode !== '' && mnemoniccode !== null) {
         filter.mnemonic_code = mnemoniccode
+      }
+      if (createtime !== '' && createtime !== null) {
+        if (createtime.length > 1) {
+          var ctimeStart = createtime[0].substring(0, 10)
+          var ctiemEnd = createtime[1].substring(0, 10)
+          filter.createtime = ctimeStart + ',' + ctiemEnd
+        }
       }
       this.getAllGoods(filter)
     },

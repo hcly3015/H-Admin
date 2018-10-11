@@ -34,7 +34,7 @@
     </el-col>
 
     <!--列表-->
-    <div class="tablelist">
+    <div class="datagridlist">
       <!--工具栏-->
       <el-col :span="24" style="padding: 5px 12px;background-color: #fff;border:1px solid #ebeef5;">
         <el-button type="primary" icon="el-icon-plus" @click="handleAdd"></el-button>

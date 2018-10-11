@@ -27,6 +27,8 @@ export default {
     user: '普通用户',
     success: '成功',
     operation: '操作',
+    starttime: '开始日期',
+    endtime: '结束日期',
     uploadheadtypeerror: '上传头像图片只能是JPG或PNG格式',
     uploadheadsizeerror: '上传头像图片大小不能超过2MB'
   },
@@ -83,6 +85,7 @@ export default {
     goods_code: '商品编码',
     goods_name: '商品名称',
     mnemonic_code: '助记码',
+    createtime: '创建日期',
     purchase_price: '商品进价',
     sales_price: '销售单价',
     minimum_price: '最低售价',

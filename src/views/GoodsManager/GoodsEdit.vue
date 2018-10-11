@@ -46,13 +46,8 @@ export default {
       editLoading: false,
 
       gridColumns: dataEdit.grid.column,
-      gridDatas: [],
-
-      dialogHeight: 200
+      gridDatas: []
     }
-  },
-  mounted: function () {
-    
   },
   components: {
     CommonForm,
@@ -62,6 +57,7 @@ export default {
     init: function (goodsId) {
       if (goodsId) {
         this.editVisible = true
+        this.editTitle = this.$t('common.edit')
         this.$nextTick(() => {
           axios.goodsById({ id: goodsId }).then(response => {
             if (response.data.success) {
@@ -81,6 +77,7 @@ export default {
         })
       } else {
         this.editVisible = true
+        this.editTitle = this.$t('common.add')
         this.forms = {}
         this.uploadImageUrl = ''
       }

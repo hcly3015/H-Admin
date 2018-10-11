@@ -1,5 +1,5 @@
 <template>
-  <div class="tablelist">
+  <div class="datagridlist">
     <el-col :span="24" style="padding: 5px 12px;background-color: #fff;border:1px solid #ebeef5">
       <el-button @click="handleNewRow" type="primary" icon="el-icon-plus"></el-button>
     </el-col>

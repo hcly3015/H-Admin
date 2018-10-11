@@ -36,7 +36,6 @@ const findGoodsById = (id) => {
   })
 }
 const updateGoodsById = (id, obj) => {
-  console.log(obj)
   return new Promise((resolve, reject) => {
     Goods.updateOne({
       _id: id
@@ -71,7 +70,7 @@ const GetAllGoods = async (ctx) => {
   let paras = {}
   let goodscode = query.goods_code || ''
   let goodsname = query.goods_name || ''
-  let mnemoniccode = query.mnemoniccode || ''
+  let mnemoniccode = query.mnemonic_code || ''
   let createtime = query.createtime || ''
   if (goodscode !== '') {
     paras.goodscode = new RegExp(goodscode)
@@ -125,12 +124,6 @@ const GoodsNewAndUpdate = async (ctx) => {
       goods_code: ctx.request.body.goods_code,
       goods_name: ctx.request.body.goods_name,
       mnemonic_code: ctx.request.body.mnemonic_code,
-      purchase_price: ctx.request.body.purchase_price,
-      sales_price: ctx.request.body.sales_price,
-      minimum_price: ctx.request.body.minimum_price,
-      inventory_quantity: ctx.request.body.inventory_quantity,
-      goods_color: ctx.request.body.goods_color,
-      goods_size: ctx.request.body.goods_size,
       goods_picture: ctx.request.body.goods_picture,
       remark: ctx.request.body.remark
     }
@@ -141,12 +134,6 @@ const GoodsNewAndUpdate = async (ctx) => {
       goods_code: ctx.request.body.goods_code,
       goods_name: ctx.request.body.goods_name,
       mnemonic_code: ctx.request.body.mnemonic_code,
-      purchase_price: ctx.request.body.purchase_price,
-      sales_price: ctx.request.body.sales_price,
-      minimum_price: ctx.request.body.minimum_price,
-      inventory_quantity: ctx.request.body.inventory_quantity,
-      goods_color: ctx.request.body.goods_color,
-      goods_size: ctx.request.body.goods_size,
       goods_picture: ctx.request.body.goods_picture,
       remark: ctx.request.body.remark,
       createtime: new Date()

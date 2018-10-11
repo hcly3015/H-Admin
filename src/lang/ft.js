@@ -27,6 +27,8 @@ export default {
     user: '普通用戶',
     success: '成功',
     operation: '操作',
+    starttime: '開始日期',
+    endtime: '結束日期',
     uploadheadtypeerror: '上傳頭像圖片只能是JPG或PNG格式',
     uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB'
   },
@@ -83,6 +85,7 @@ export default {
     goods_code: '商品編碼',
     goods_name: '商品名稱',
     mnemonic_code: '助記碼',
+    createtime: '創建日期',
     purchase_price: '商品進價',
     sales_price: '銷售單價',
     minimum_price: '最低售價',

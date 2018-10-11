@@ -15,6 +15,11 @@ var data = {
       'name': 'mnemonic_code',
       'title': '助记码',
       'type': 'string'
+    },
+    {
+      'name': 'createtime',
+      'title': '时间',
+      'type': 'datetime'
     }
   ],
   'grid': {
@@ -45,6 +50,13 @@ var data = {
         'title': '助记码',
         'type': 'string',
         'width': '150',
+        'template': ''
+      },
+      {
+        'name': 'createtime',
+        'title': '创建日期',
+        'type': 'datetime',
+        'width': '120',
         'template': ''
       },
       {

@@ -5,6 +5,8 @@
         <el-row>
           <el-form-item v-for="(item,index) in searchForm" :key="index" :label="$t(pageName.toLowerCase()+'.'+item.name)" :prop="item.name">
             <el-input v-if="item.type===fieldType.string" v-model="forms[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable style="width:240px"></el-input>
+            <el-date-picker v-if="item.type===fieldType.datetime" v-model="forms[item.name]" unlink-panels value-format='yyyy-MM-dd' type="daterange" align="left" :start-placeholder="$t('common.starttime')" :end-placeholder="$t('common.endtime')" style="width:240px;">
+            </el-date-picker>
           </el-form-item>
         </el-row>
         <el-row>

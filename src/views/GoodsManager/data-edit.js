@@ -38,49 +38,49 @@ var data = {
         'title': '商品进价',
         'type': 'number',
         'width': '140',
-        'template': ''
+        'template': 'input'
       },
       {
         'name': 'sales_price',
         'title': '销售单价',
         'type': 'number',
         'width': '120',
-        'template': ''
+        'template': 'inputnumber'
       },
       {
         'name': 'minimum_price',
         'title': '最低售价',
         'type': 'number',
         'width': '130',
-        'template': ''
+        'template': 'inputnumber'
       },
       {
         'name': 'inventory_quantity',
         'title': '库存数量',
         'type': 'number',
         'width': '130',
-        'template': ''
+        'template': 'inputnumber'
       },
       {
         'name': 'goods_color',
         'title': '颜色',
         'type': 'string',
         'width': '100',
-        'template': ''
+        'template': 'input'
       },
       {
         'name': 'goods_size',
         'title': '尺码',
         'type': 'number',
         'width': '100',
-        'template': ''
+        'template': 'inputnumber'
       },
       {
         'name': 'remark',
         'title': '备注',
         'type': 'string',
         'width': 'auto',
-        'template': ''
+        'template': 'input'
       }
     ]
   }

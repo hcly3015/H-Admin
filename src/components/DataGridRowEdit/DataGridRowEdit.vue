@@ -6,8 +6,10 @@
     <el-table :data="datas" v-loading="gridLoading" border highlight-current-row ref="table" style="width: 100%">
       <el-table-column v-for="(item,index) in columns" :key="index" :prop="item.name" :label="$t(pageName.toLowerCase()+'.'+item.name)" :width="item.width">
         <template slot-scope="scope">
-          <img v-if="item.template==='img'" :src="(scope.row[item.name]!==''&&scope.row[item.name]!==undefined)?$Config.serverAddress+scope.row[item.name]:''" alt="" style="width: 100%;height: 100%">
-          <span v-else>{{ scope.row[item.name] }}</span>
+          <el-input v-if="item.template==='input'">
+          </el-input>
+          <el-input-number v-if="item.template==='inputnumber'">
+          </el-input-number>
         </template>
       </el-table-column>
       <el-table-column :label="$t('common.operation')" width="100">
@@ -41,9 +43,6 @@ export default {
     datas: {
       type: Array
     }
-  },
-  mounted: function () {
-    
   },
   methods: {
     handleNewRow: function () {

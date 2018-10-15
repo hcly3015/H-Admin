@@ -30,7 +30,8 @@ export default {
     starttime: 'Start time',
     endtime: 'End time',
     uploadheadtypeerror: 'Upload head picture can only be JPG or PNG format',
-    uploadheadsizeerror: 'Upload head image size can not exceed 2MB'
+    uploadheadsizeerror: 'Upload head image size can not exceed 2MB',
+    inputcontent: 'Please input contents'
   },
   user: {
     personal: 'Personal Center',

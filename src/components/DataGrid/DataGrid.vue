@@ -3,7 +3,9 @@
     <el-col :span="24" style="padding: 5px 12px;background-color: #fff;border:1px solid #ebeef5">
       <el-button v-for="(item,index) in toolbar" :key="index" v-if="item==='add'" @click="handleNewData" type="primary" icon="el-icon-plus"></el-button>
       <el-button v-for="(item,index) in toolbar" :key="index" v-if="item==='refresh'" @click="handleRefresh" type="primary" icon="el-icon-refresh"></el-button>
-      <el-input style="float:right;width:200px;"></el-input>
+      <el-input clearable :placeholder="$t('common.inputcontent')" style="float:right;width:260px;">
+        <el-button slot="append" icon="el-icon-search"></el-button>
+      </el-input>
     </el-col>
     <el-table :data="datas" :max-height="gridMaxHeight" v-loading="gridLoading" border highlight-current-row ref="table" style="width: 100%">
       <el-table-column v-for="(item,index) in columns" :key="index" :prop="item.name" :label="$t(pageName.toLowerCase()+'.'+item.name)" :width="item.width">
@@ -24,6 +26,8 @@
 </template>
 
 <script>
+import moment from 'moment/moment'
+
 export default {
   data () {
     return {
@@ -70,6 +74,15 @@ export default {
     },
     handleOperation: function (name, index, row) {
       this.$emit('gridMethods', name, index, row)
+    },
+
+    // 时间格式化
+    dateFormatter: function (row, column) {
+      var date = row[column.property]
+      if (date === undefined) {
+        return ''
+      }
+      return moment(date).format('YYYY-MM-DD HH:mm:ss')
     }
   }
 }

@@ -6,10 +6,10 @@
     <el-table :data="datas" v-loading="gridLoading" border highlight-current-row ref="table" style="width: 100%">
       <el-table-column v-for="(item,index) in columns" :key="index" :prop="item.name" :label="$t(pageName.toLowerCase()+'.'+item.name)" :width="item.width">
         <template slot-scope="scope">
-          <el-input v-if="item.template==='input'">
+          <el-input v-if="item.template==='input'" v-model="scope.row[item.name]" clearable>
           </el-input>
-          <el-input-number v-if="item.template==='inputnumber'">
-          </el-input-number>
+          <el-input v-if="item.template==='inputnumber'" v-model="scope.row[item.name]" type="number" clearable>
+          </el-input>
         </template>
       </el-table-column>
       <el-table-column :label="$t('common.operation')" width="100">

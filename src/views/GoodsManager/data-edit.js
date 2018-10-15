@@ -37,43 +37,43 @@ var data = {
         'name': 'purchase_price',
         'title': '商品进价',
         'type': 'number',
-        'width': '140',
-        'template': 'input'
+        'width': '150',
+        'template': 'inputnumber'
       },
       {
         'name': 'sales_price',
         'title': '销售单价',
         'type': 'number',
-        'width': '120',
+        'width': '150',
         'template': 'inputnumber'
       },
       {
         'name': 'minimum_price',
         'title': '最低售价',
         'type': 'number',
-        'width': '130',
+        'width': '150',
         'template': 'inputnumber'
       },
       {
         'name': 'inventory_quantity',
         'title': '库存数量',
         'type': 'number',
-        'width': '130',
+        'width': '150',
+        'template': 'inputnumber'
+      },
+      {
+        'name': 'goods_size',
+        'title': '尺码',
+        'type': 'number',
+        'width': '150',
         'template': 'inputnumber'
       },
       {
         'name': 'goods_color',
         'title': '颜色',
         'type': 'string',
-        'width': '100',
+        'width': '150',
         'template': 'input'
-      },
-      {
-        'name': 'goods_size',
-        'title': '尺码',
-        'type': 'number',
-        'width': '100',
-        'template': 'inputnumber'
       },
       {
         'name': 'remark',

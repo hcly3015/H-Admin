@@ -30,7 +30,8 @@ export default {
     starttime: '開始日期',
     endtime: '結束日期',
     uploadheadtypeerror: '上傳頭像圖片只能是JPG或PNG格式',
-    uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB'
+    uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB',
+    inputcontent: '請輸入內容'
   },
   user: {
     personal: '個人中心',

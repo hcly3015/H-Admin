@@ -83,15 +83,20 @@ export default {
       }
     },
     handleEditSubmit: function () {
-      let submitForm = this.forms
-      axios.goodsNewAndUpdate(submitForm).then(response => {
+      let submitForm = this.formModels
+      let submitDetl = this.gridDatas
+      let data = {
+        main: submitForm,
+        delt: submitDetl
+      }
+      api.goods.goodsNewAndUpdate(data).then(response => {
         this.editLoading = false
-        if (response.data.success) {
+        if (response.success) {
           this.msgSuccess(this.$t('common.success'))
           this.editVisible = false
           this.$emit('gridRefresh')
         } else {
-          this.msgWarning(response.data.msg)
+          this.msgWarning(response.msg)
         }
       })
       this.editLoading = false

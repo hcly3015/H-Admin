@@ -30,41 +30,47 @@ var data = {
         'title': '图片',
         'type': 'string',
         'width': '120',
-        'template': 'img'
+        'template': 'img',
+        'formatter': ''
       }, {
         'name': 'goods_code',
         'title': '商品编码',
         'type': 'string',
         'width': '150',
-        'template': ''
+        'template': '',
+        'formatter': ''
       },
       {
         'name': 'goods_name',
         'title': '商品名称',
         'type': 'string',
         'width': '150',
-        'template': ''
+        'template': '',
+        'formatter': ''
       },
       {
         'name': 'mnemonic_code',
         'title': '助记码',
         'type': 'string',
         'width': '150',
-        'template': ''
+        'template': '',
+        'formatter': ''
       },
       {
         'name': 'createtime',
         'title': '创建日期',
         'type': 'datetime',
-        'width': '120',
-        'template': ''
+        'width': '150',
+        'template': '',
+        'formatter': 'dateFormatter'
       },
       {
         'name': 'remark',
         'title': '备注',
         'type': 'string',
         'width': 'auto',
-        'template': ''
+        'template': '',
+        'formatter': ''
       }
     ],
     'operation': [

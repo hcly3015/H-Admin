@@ -31,7 +31,9 @@ export default {
     endtime: '結束日期',
     uploadheadtypeerror: '上傳頭像圖片只能是JPG或PNG格式',
     uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB',
-    inputcontent: '請輸入內容'
+    inputcontent: '請輸入內容',
+    stocknumber: '數量盤點',
+    stockrecord: '盤點記錄'
   },
   user: {
     personal: '個人中心',
@@ -86,6 +88,9 @@ export default {
     goods_code: '商品編碼',
     goods_name: '商品名稱',
     mnemonic_code: '助記碼',
+    goods_category: '商品類別',
+    goods_unit: '商品單位',
+    goods_spec: '商品規格',
     createtime: '創建日期',
     purchase_price: '商品進價',
     sales_price: '銷售單價',
@@ -94,6 +99,13 @@ export default {
     goods_color: '顔色',
     goods_size: '尺碼',
     goods_picture: '圖片',
-    remark: '備注'
+    remark: '備注',
+    salestime: '銷售時間',
+    total: '合計',
+    rebate: '折扣',
+    discount: '優惠',
+    receivable: '應收',
+    selectmember: '選擇會員',
+    balance: '結算'
   }
 }

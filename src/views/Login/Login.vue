@@ -70,7 +70,8 @@ export default {
         username: this.username,
         password: this.password
       }
-      api.user.userLogin(loginForm).then(( response ) => {
+      let that = this
+      api.user.userLogin(loginForm).then((response) => {
         if (response.success) {
           this.msgSuccess(this.$t('other.loginsuccess'))
           var userInfo = {
@@ -86,6 +87,8 @@ export default {
         } else {
           this.msgInfo(response.msg)
         }
+      }, function (error) {
+        that.msgWarning(error.status + ' ' + error.statusText)
       })
       this.loginLoading = false
     },

@@ -6,7 +6,7 @@ const mongodb = {
   db: 'vue2'
 }
 // 端口
-const port = '8091'
+const port = '9521'
 
 const baseApi = '/api'
 

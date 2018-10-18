@@ -31,7 +31,9 @@ export default {
     endtime: 'End time',
     uploadheadtypeerror: 'Upload head picture can only be JPG or PNG format',
     uploadheadsizeerror: 'Upload head image size can not exceed 2MB',
-    inputcontent: 'Please input contents'
+    inputcontent: 'Please input contents',
+    stocknumber: 'Stock',
+    stockrecord: 'Records'
   },
   user: {
     personal: 'Personal Center',
@@ -86,6 +88,9 @@ export default {
     goods_code: 'Goods code',
     goods_name: 'Goods name',
     mnemonic_code: 'Mnemonic code',
+    goods_category: 'Goods Category',
+    goods_unit: 'Goods Unit',
+    goods_spec: 'Goods Spec',
     createtime: 'Create time',
     purchase_price: 'Purchase price',
     sales_price: 'Sales price',
@@ -94,6 +99,13 @@ export default {
     goods_color: 'Color',
     goods_size: 'Size',
     goods_picture: 'Picture',
-    remark: 'Remark'
+    remark: 'Remark',
+    salestime: 'Sales time',
+    total: 'Total',
+    rebate: 'Rebate',
+    discount: 'Discount',
+    receivable: 'Receivalbe',
+    selectmember: 'Select member',
+    balance: 'Balance'
   }
 }

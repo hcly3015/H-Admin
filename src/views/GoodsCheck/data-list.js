@@ -26,14 +26,6 @@ var data = {
     'toolbar': ['add', 'refresh'],
     'column': [
       {
-        'name': 'goods_picture',
-        'title': '图片',
-        'type': 'string',
-        'width': '120',
-        'template': 'img',
-        'formatter': ''
-      },
-      {
         'name': 'goods_code',
         'title': '商品编码',
         'type': 'string',
@@ -44,14 +36,6 @@ var data = {
       {
         'name': 'goods_name',
         'title': '商品名称',
-        'type': 'string',
-        'width': '130',
-        'template': '',
-        'formatter': ''
-      },
-      {
-        'name': 'mnemonic_code',
-        'title': '助记码',
         'type': 'string',
         'width': '130',
         'template': '',
@@ -82,6 +66,27 @@ var data = {
         'formatter': ''
       },
       {
+        'name': 'inventory_quantity',
+        'title': '库存数量',
+        'type': 'number',
+        'width': '130',
+        'template': ''
+      },
+      {
+        'name': 'goods_size',
+        'title': '尺码',
+        'type': 'number',
+        'width': '100',
+        'template': ''
+      },
+      {
+        'name': 'goods_color',
+        'title': '颜色',
+        'type': 'string',
+        'width': '100',
+        'template': ''
+      },
+      {
         'name': 'createtime',
         'title': '创建日期',
         'type': 'datetime',
@@ -100,11 +105,11 @@ var data = {
     ],
     'operation': [
       {
-        'name': 'edit',
+        'name': 'stocknumber',
         'type': 'text'
       },
       {
-        'name': 'delete',
+        'name': 'stockrecord',
         'type': 'text'
       }
     ]

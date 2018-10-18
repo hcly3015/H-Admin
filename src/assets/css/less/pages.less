@@ -88,46 +88,93 @@
 
 // ===========================收银页面
 .collenting-silver {
-  .grid-content {
-    display: flex;
-    align-items: center;
-    height: 100px;
-
-    .grid-image {
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .grid-content-right {
-      display: flex;
-      flex: 1;
-      flex-flow: column;
-      justify-content: space-around;
-      height: 100%;
-      text-align: center;
+  .left-container {
+    background-color: #d3dce6;
+    .left-header {
+      height: 52px;
       font-size: 16px;
-      color: #999;
-      .grid-name {
-        color: #000;
+      .header-container {
+        height: 100%;
+        padding: 5px 12px;
+        background-color: #fff;
+        border-bottom: 1px solid #ebeef5;
       }
-      .grid-number {
-        padding: 0;
-        display: flex;
-        align-self: flex-end;
-        margin-right: 10px;
+    }
+    .left-content {
+      height: calc(100% - 233px);
+      overflow: auto;
+      background-color: #fff;
+      font-size: 15px;
+      border-bottom: 1px solid #ebeef5;
+      .sell-container {
+        height: 110px;
+        padding: 5px 12px;
+        background-color: #fff;
+        border-bottom: 1px dashed #ebeef5;
+        cursor: pointer;
       }
-      .grid-button {
-        padding: 10;
+    }
+    .left-footer {
+      height: 180px;
+      border-bottom: 1px solid #ebeef5;
+      .footer-container {
+        height: 100%;
+        padding: 5px 12px;
+        background-color: #fff;
+      }
+    }
+  }
+  .grid-content-card {
+    .grid-content {
+      display: flex;
+      align-items: center;
+      height: 100px;
+
+      .grid-image {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .grid-content-right {
         display: flex;
-        align-self: flex-end;
-        margin-right: 10px;
+        flex: 1;
+        flex-flow: column;
+        justify-content: space-around;
+        height: 100%;
+        text-align: center;
+        font-size: 16px;
+        color: #999;
+        .grid-name {
+          color: #000;
+        }
+        .grid-number {
+          padding: 0;
+          display: flex;
+          align-self: flex-end;
+          margin-right: 10px;
+        }
+        .grid-button {
+          padding: 10;
+          display: flex;
+          align-self: flex-end;
+          margin-right: 10px;
+        }
       }
     }
   }
   .el-main {
     padding: 0px !important;
+  }
+
+  .main-container {
+    background-color: #ecf0f5;
+    .main-header {
+      padding: 5px 12px;
+      background-color: #fff;
+      border: 1px solid #ebeef5;
+    }
   }
 }

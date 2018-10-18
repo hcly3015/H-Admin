@@ -20,6 +20,24 @@ var data = {
       'width': '240'
     },
     {
+      'name': 'goods_category',
+      'title': '商品类别',
+      'type': 'string',
+      'width': '240'
+    },
+    {
+      'name': 'goods_unit',
+      'title': '商品单位',
+      'type': 'string',
+      'width': '240'
+    },
+    {
+      'name': 'goods_spec',
+      'title': '商品规格',
+      'type': 'string',
+      'width': '240'
+    },
+    {
       'name': 'remark',
       'title': '备注',
       'type': 'textarea',

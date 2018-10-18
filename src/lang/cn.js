@@ -31,7 +31,9 @@ export default {
     endtime: '结束日期',
     uploadheadtypeerror: '上传头像图片只能是JPG或PNG格式',
     uploadheadsizeerror: '上传头像图片大小不能超过2MB',
-    inputcontent: '请输入内容'
+    inputcontent: '请输入内容',
+    stocknumber: '数量盘点',
+    stockrecord: '盘点记录'
   },
   user: {
     personal: '个人中心',
@@ -86,6 +88,9 @@ export default {
     goods_code: '商品编码',
     goods_name: '商品名称',
     mnemonic_code: '助记码',
+    goods_category: '商品类别',
+    goods_unit: '商品单位',
+    goods_spec: '商品规格',
     createtime: '创建日期',
     purchase_price: '商品进价',
     sales_price: '销售单价',
@@ -94,6 +99,13 @@ export default {
     goods_color: '颜色',
     goods_size: '尺码',
     goods_picture: '图片',
-    remark: '备注'
+    remark: '备注',
+    salestime: '销售时间',
+    total: '合计',
+    rebate: '折扣',
+    discount: '优惠',
+    receivable: '应收',
+    selectmember: '选择会员',
+    balance: '结算'
   }
 }

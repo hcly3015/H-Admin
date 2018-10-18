@@ -10,11 +10,11 @@
     <el-table :data="datas" :max-height="gridMaxHeight" v-loading="gridLoading" border highlight-current-row ref="table" style="width: 100%">
       <el-table-column v-for="(item,index) in columns" :key="index" :prop="item.name" :label="$t(pageName.toLowerCase()+'.'+item.name)" :width="item.width">
         <template slot-scope="scope">
-          <img v-if="item.template==='img'" :src="(scope.row[item.name]!==''&&scope.row[item.name]!==undefined)?$Config.serverAddress+scope.row[item.name]:''" alt="" style="width: 100%;height: 100%">
+          <img v-if="item.template==='img'" :src="(scope.row[item.name]!==null&&scope.row[item.name]!==''&&scope.row[item.name]!==undefined)?$Config.serverAddress+scope.row[item.name]:''" alt="" style="width: 100%;height: 100%">
           <span v-else>{{ scope.row[item.name] }}</span>
         </template>
       </el-table-column>
-      <el-table-column v-show="operation.length!==0" fixed="right" :label="$t('common.operation')" width="120">
+      <el-table-column v-show="operation.length!==0" fixed="right" :label="$t('common.operation')" width="140">
         <template slot-scope="scope">
           <el-button v-for="(item,index) in operation" :key="index" :type="item.type" @click.native.prevent="handleOperation(item.name, scope.$index, scope.row)" size="small">
             {{$t('common.'+item.name)}}

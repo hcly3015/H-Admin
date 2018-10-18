@@ -17,9 +17,15 @@ function goodsUploadPic (params) {
   return fetch({ url: '/api/goods/upload', method: 'post', data: params })
 }
 
+// 获取所有商品明细
+function goodsListDetl (params) {
+  return fetch({ url: '/api/goodsdetl/list', method: 'get', params: params })
+}
+
 export default {
   goodsList,
   goodsById,
   goodsNewAndUpdate,
-  goodsUploadPic
+  goodsUploadPic,
+  goodsListDetl
 }

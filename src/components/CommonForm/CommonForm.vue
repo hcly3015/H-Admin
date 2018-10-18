@@ -25,7 +25,6 @@ export default {
     return {
       fieldType: Global.fieldType,
 
-      uploadImageUrl: '',
       uploadHeaders: {
         Authorization: 'token ' + this.$store.state.token
       }
@@ -45,6 +44,12 @@ export default {
       type: Array
     }
   },
+  computed: {
+    uploadImageUrl () {
+      let imagUrl = this.formModels.goods_picture
+      return (imagUrl !== '' && imagUrl !== undefined) ? this.$Config.serverAddress + imagUrl : ''
+    }
+  },
   methods: {
     beforeAvatarUpload (file, fileList) {
       const isImg = file.type === 'image/png' || file.type === 'image/jpeg'
@@ -59,7 +64,7 @@ export default {
     },
     handleAvatarSuccess (res, file) {
       if (res.success) {
-        this.forms.goods_picture = res.msg
+        this.formModels.goods_picture = res.msg
         this.uploadImageUrl = URL.createObjectURL(file.raw)
       }
     }

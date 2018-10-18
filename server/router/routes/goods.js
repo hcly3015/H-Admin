@@ -17,4 +17,7 @@ module.exports = function (router) {
 
   // 上传图片
   router.post('/goods/upload', checkToken, goodsController.GoodsUploadPic)
+
+  // 获取所有商品明细
+  router.get('/goodsdetl/list', checkToken, goodsController.GetAllGoodsDetl)
 }

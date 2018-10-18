@@ -60,13 +60,9 @@ export default {
         this.editTitle = this.$t('common.edit')
         this.$nextTick(() => {
           api.goods.goodsById({ id: goodsId }).then(response => {
-            if (response.data.success) {
-              this.forms = response.data.data
-              this.uploadImageUrl =
-                response.data.data.goods_picture !== ''
-                  ? this.$Config.serverAddress +
-                  response.data.data.goods_picture
-                  : ''
+            if (response.success) {
+              this.formModels = response.data
+              this.gridDatas = response.detl
             } else if (response.status === 401) {
               // 不成功跳转回登录页
               this.$router.push('/login')
@@ -78,8 +74,8 @@ export default {
       } else {
         this.editVisible = true
         this.editTitle = this.$t('common.add')
-        this.forms = {}
-        this.uploadImageUrl = ''
+        this.formModels = {}
+        this.gridDatas = []
       }
     },
     handleEditSubmit: function () {
@@ -87,7 +83,7 @@ export default {
       let submitDetl = this.gridDatas
       let data = {
         main: submitForm,
-        delt: submitDetl
+        detl: submitDetl
       }
       api.goods.goodsNewAndUpdate(data).then(response => {
         this.editLoading = false

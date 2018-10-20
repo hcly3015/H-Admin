@@ -9,6 +9,8 @@ const goodsSchema = db.Schema({
   goods_category: String,
   goods_unit: String,
   goods_spec: String,
+  goods_sales_price: String,
+  goods_stock_number: String,
   remark: String,
   createtime: Date
 })

@@ -15,6 +15,7 @@ export default {
     add: '新增',
     edit: '编辑',
     delete: '删除',
+    details: '详情',
     male: '男',
     female: '女',
     pleaseselect: '请选择',
@@ -33,7 +34,10 @@ export default {
     uploadheadsizeerror: '上传头像图片大小不能超过2MB',
     inputcontent: '请输入内容',
     stocknumber: '数量盘点',
-    stockrecord: '盘点记录'
+    stockrecord: '盘点记录',
+    color: '颜色',
+    size: '尺码',
+    selected: '选择'
   },
   user: {
     personal: '个人中心',
@@ -94,8 +98,10 @@ export default {
     createtime: '创建日期',
     purchase_price: '商品进价',
     sales_price: '销售单价',
+    goods_sales_price: '销售单价',
     minimum_price: '最低售价',
     inventory_quantity: '库存数量',
+    goods_stock_number: '总库存',
     goods_color: '颜色',
     goods_size: '尺码',
     goods_picture: '图片',

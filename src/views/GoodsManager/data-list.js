@@ -58,6 +58,14 @@ var data = {
         'formatter': ''
       },
       {
+        'name': 'goods_stock_number',
+        'title': '总库存',
+        'type': 'string',
+        'width': '130',
+        'template': '',
+        'formatter': ''
+      },
+      {
         'name': 'goods_category',
         'title': '商品类别',
         'type': 'string',
@@ -77,7 +85,7 @@ var data = {
         'name': 'goods_spec',
         'title': '商品规格',
         'type': 'string',
-        'width': '110',
+        'width': '150',
         'template': '',
         'formatter': ''
       },

@@ -171,18 +171,7 @@ const GoodsNewAndUpdate = async (ctx) => {
   let detls = ctx.request.body.detl
   let goodsId = mains._id
   if (goodsId !== '' && goodsId !== undefined) {
-    let obj = {
-      goods_code: mains.goods_code,
-      goods_name: mains.goods_name,
-      mnemonic_code: mains.mnemonic_code,
-      goods_picture: mains.goods_picture,
-      goods_category: mains.goods_category,
-      goods_unit: mains.goods_unit,
-      goods_spec: mains.goods_spec,
-      remark: mains.remark
-    }
-    await updateGoodsById(goodsId, obj)
-
+    let stockNumber = 0
     for (let i = 0; i < detls.length; i++) {
       let detlId = detls[i]._id
       let objDetl = {
@@ -196,12 +185,27 @@ const GoodsNewAndUpdate = async (ctx) => {
         sales_price: detls[i].sales_price,
         minimum_price: detls[i].minimum_price,
         inventory_quantity: detls[i].inventory_quantity,
-        goods_color: detls[i].color,
-        goods_size: detls[i].size,
+        goods_color: detls[i].goods_color,
+        goods_size: detls[i].goods_size,
         remark: detls[i].remark
       }
+      stockNumber += Number(detls[i].inventory_quantity)
       await updateGoodsDetlById(detlId, objDetl)
     }
+
+    let obj = {
+      goods_code: mains.goods_code,
+      goods_name: mains.goods_name,
+      mnemonic_code: mains.mnemonic_code,
+      goods_picture: mains.goods_picture,
+      goods_category: mains.goods_category,
+      goods_unit: mains.goods_unit,
+      goods_spec: mains.goods_spec,
+      goods_stock_number: stockNumber,
+      remark: mains.remark
+    }
+    await updateGoodsById(goodsId, obj)
+
     console.log('商品信息修改成功')
   } else {
     let goods = new Goods({
@@ -227,6 +231,7 @@ const GoodsNewAndUpdate = async (ctx) => {
       return
     } else {
       await new Promise((resolve, reject) => {
+        let stockNumber = 0
         for (let i = 0; i < detls.length; i++) {
           let goodsDetl = new GoodsDetl({
             goodsId: goods._id,
@@ -245,6 +250,7 @@ const GoodsNewAndUpdate = async (ctx) => {
             remark: detls[i].remark,
             createtime: new Date()
           })
+          stockNumber += Number(detls[i].inventory_quantity)
           goodsDetl.save((err) => {
             if (err) {
               let errorMsg = 'goodsDetl:' + err
@@ -254,6 +260,7 @@ const GoodsNewAndUpdate = async (ctx) => {
           })
         }
 
+        goods.goods_stock_number = stockNumber
         goods.save((err) => {
           if (err) {
             let errorMsg = 'goods:' + err

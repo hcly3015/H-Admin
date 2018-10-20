@@ -38,7 +38,6 @@ export default {
     return {
       pageName: dataEdit.name,
       formProps: dataEdit.forms,
-
       formModels,
 
       editTitle: '',

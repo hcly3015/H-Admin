@@ -15,6 +15,7 @@ export default {
     add: '新增',
     edit: '編輯',
     delete: '刪除',
+    details: '詳情',
     male: '男',
     female: '女',
     pleaseselect: '請選擇',
@@ -33,7 +34,10 @@ export default {
     uploadheadsizeerror: '上傳頭像圖片大小不能超過2MB',
     inputcontent: '請輸入內容',
     stocknumber: '數量盤點',
-    stockrecord: '盤點記錄'
+    stockrecord: '盤點記錄',
+    color: '顔色',
+    size: '尺碼',
+    selected: '選擇'
   },
   user: {
     personal: '個人中心',
@@ -94,8 +98,10 @@ export default {
     createtime: '創建日期',
     purchase_price: '商品進價',
     sales_price: '銷售單價',
+    goods_sales_price: '銷售單價',
     minimum_price: '最低售價',
     inventory_quantity: '庫存數量',
+    goods_stock_number: '總庫存',
     goods_color: '顔色',
     goods_size: '尺碼',
     goods_picture: '圖片',

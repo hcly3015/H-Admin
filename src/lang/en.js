@@ -15,6 +15,7 @@ export default {
     add: 'Add',
     edit: 'Edit',
     delete: 'Delete',
+    details: 'Details',
     male: 'Male',
     female: 'Female',
     pleaseselect: 'Please choose',
@@ -33,7 +34,10 @@ export default {
     uploadheadsizeerror: 'Upload head image size can not exceed 2MB',
     inputcontent: 'Please input contents',
     stocknumber: 'Stock',
-    stockrecord: 'Records'
+    stockrecord: 'Records',
+    color: 'Color',
+    size: 'Size',
+    selected: 'Selected'
   },
   user: {
     personal: 'Personal Center',
@@ -94,8 +98,10 @@ export default {
     createtime: 'Create time',
     purchase_price: 'Purchase price',
     sales_price: 'Sales price',
+    goods_sales_price: 'Sales price',
     minimum_price: 'Minimum price',
     inventory_quantity: 'Stock quantity',
+    goods_stock_number: 'Total stock',
     goods_color: 'Color',
     goods_size: 'Size',
     goods_picture: 'Picture',

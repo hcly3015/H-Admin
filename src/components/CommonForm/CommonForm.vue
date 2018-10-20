@@ -2,11 +2,11 @@
   <div>
     <el-form :model="formModels" :inline="true" label-width="115px" ref="formModels">
       <el-form-item v-for="(item,index) in formProps" :key="index" :label="$t(pageName.toLowerCase()+'.'+item.name)" :prop="item.name">
-        <el-input v-if="item.type===fieldType.string" v-model="formModels[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable :style="'width:'+item.width+'px'">
+        <el-input v-if="item.type===fieldType.string" v-model="formModels[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" :readonly="item.readonly" clearable :style="'width:'+item.width+'px'">
         </el-input>
-        <el-input-number v-if="item.type===fieldType.number" v-model="formModels[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable :style="'width:'+item.width+'px'">
+        <el-input-number v-if="item.type===fieldType.number" v-model="formModels[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" :readonly="item.readonly" clearable :style="'width:'+item.width+'px'">
         </el-input-number>
-        <el-input v-if="item.type===fieldType.textarea" type="textarea" v-model="formModels[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" clearable :style="'width:'+item.width+'px'">
+        <el-input v-if="item.type===fieldType.textarea" type="textarea" v-model="formModels[item.name]" :placeholder="$t(pageName.toLowerCase()+'.'+item.name)" :readonly="item.readonly" clearable :style="'width:'+item.width+'px'">
         </el-input>
         <el-upload v-if="item.type===fieldType.picture" class="avatar-uploader" action="/api/goods/upload" :show-file-list="false" :headers="uploadHeaders" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
           <img v-if="uploadImageUrl" :src="uploadImageUrl" class="avatar">
@@ -33,15 +33,19 @@ export default {
   props: {
     pageName: {
       type: String,
-      default () {
-        return ''
-      }
+      default: ''
     },
     formModels: {
-      type: Object
+      type: Object,
+      default () {
+        return {}
+      }
     },
     formProps: {
-      type: Array
+      type: Array,
+      default () {
+        return []
+      }
     }
   },
   computed: {

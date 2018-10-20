@@ -6,54 +6,28 @@ var data = {
       'title': '商品编码',
       'type': 'string',
       'width': '240',
-      'readonly': false
+      'readonly': true
     },
     {
       'name': 'goods_name',
       'title': '商品名称',
       'type': 'string',
       'width': '240',
-      'readonly': false
+      'readonly': true
     },
     {
-      'name': 'mnemonic_code',
-      'title': '助记码',
+      'name': 'goods_stock_number',
+      'title': '库存',
       'type': 'string',
       'width': '240',
-      'readonly': false
-    },
-    {
-      'name': 'goods_category',
-      'title': '商品类别',
-      'type': 'string',
-      'width': '240',
-      'readonly': false
-    },
-    {
-      'name': 'goods_unit',
-      'title': '商品单位',
-      'type': 'string',
-      'width': '240',
-      'readonly': false
-    },
-    {
-      'name': 'goods_spec',
-      'title': '商品规格',
-      'type': 'string',
-      'width': '240',
-      'readonly': false
+      'readonly': true
     },
     {
       'name': 'remark',
       'title': '备注',
       'type': 'textarea',
       'width': '240',
-      'readonly': false
-    },
-    {
-      'name': 'goods_picture',
-      'title': '图片',
-      'type': 'picture'
+      'readonly': true
     }
   ],
   'grid': {

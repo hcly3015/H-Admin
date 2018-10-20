@@ -61,7 +61,7 @@ var data = {
         'name': 'goods_spec',
         'title': '商品规格',
         'type': 'string',
-        'width': '110',
+        'width': '150',
         'template': '',
         'formatter': ''
       },
@@ -69,7 +69,7 @@ var data = {
         'name': 'inventory_quantity',
         'title': '库存数量',
         'type': 'number',
-        'width': '130',
+        'width': '100',
         'template': ''
       },
       {

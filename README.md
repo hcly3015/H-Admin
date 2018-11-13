@@ -120,3 +120,7 @@ Json Web Token是怎么工作的？
 ![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/useradd.png)
 ![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/useredit.png)
 ![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/userlist1.png)
+
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/goodsAdd.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/goodsEdit.png)
+![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/goodsSY.png)

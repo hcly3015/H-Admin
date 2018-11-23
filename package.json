@@ -12,7 +12,9 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "server": "cross-env NODE_ENV=development nodemon server/index.js"
+    "server-mongodb": "cross-env NODE_ENV=development nodemon server/mongodb/index.js",
+    "server-mysql": "cross-env NODE_ENV=development nodemon server/mysql/index.js",
+    "pm2": "pm2 start processes.json"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -31,6 +33,7 @@
     "less-loader": "^4.1.0",
     "moment": "^2.22.2",
     "mongoose": "^5.2.9",
+    "mysql2": "^1.6.4",
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.3",
     "require-dir": "^1.1.0",

@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "myserver",
-      "cwd": "/Space/network/H-Admin/server",
+      "cwd": "/Space/network/H-Admin/server/mysql",
       "script": "index.js",
       "log_date_format": "YYYY-MM-DD HH:mm Z",
       "error_file": "/Space/network/H-Admin/server/log/node-app/node-app.stderr.log",

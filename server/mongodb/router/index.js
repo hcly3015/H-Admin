@@ -3,7 +3,7 @@ const requireDir = require('require-dir')
 const Router = require('koa-router')
 
 const config = require('../config')
-const routes = requireDir('./routes')
+const routes = requireDir('./routers')
 
 module.exports = function () {
   const router = new Router({ prefix: config.baseApi })

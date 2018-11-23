@@ -3,7 +3,7 @@ const checkToken = require('../../token/checkToken.js')
 const userController = require('../../controller/user.js')
 
 /***************************************************************
- * 商品
+ * 用户
  **************************************************************/
 module.exports = function (router) {
   // 登录

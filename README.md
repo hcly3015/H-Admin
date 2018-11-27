@@ -1,9 +1,15 @@
 # vue2-admin
-> 基于vue2+mongodb+koa2+jsonwebtoken的简单后台管理
+> 基于vue2+(mongodb/mysql)+koa2+jsonwebtoken的后台管理
+``` bash
+在线预览地址：http://www.kxshuo.cf
+1/基于nodejs写了mongodb和mysql两个后台服务
+2/在线版本基于mysql服务部署在腾讯云上，mysql后台接口只写了登录，其它功能接口暂时未完成
+3/实现公共组件化。基于Ningx部署项目
+4/。。。。。。
+```
 
 ## 环境配置
-本地搭建好环境(node.js，node淘宝镜像，mongodb安装以及配置等等)
-
+> 本地搭建环境(nodejs，node淘宝镜像，mongodb/mysql安装以及配置等等)
 ``` bash
 $ use vue2  (mongodb命令下创建数据库)
 $ db.createUser({user:"root",pwd:"hexx123",roles:[{role:"readWrite",db:"vue2"}]})  (mongodb命令下创建用户)
@@ -29,7 +35,7 @@ $ npm install  （建议使用淘宝镜像$ cnpm install）
 2/启动服务端
 
 ``` bash
-$ npm run server
+$ npm run server-mongodb
 ```
 
 ``` bash
@@ -39,10 +45,10 @@ $ npm run server
   "apps": [
     {
       "name": "myserver",
-      "cwd": "/Space/network/H-Admin/server",
+      "cwd": "./server",
       "script": "index.js",
       "log_date_format": "YYYY-MM-DD HH:mm Z",
-      "error_file": "/Space/network/H-Admin/server/log/node-app/node-app.stderr.log",
+      "error_file": "./server/log/node-app/node-app.stderr.log",
       "out_file": "log/node-app.stdout.log",
       "pid_file": "log/pids/node-geo-api.pid",
       "instances": 1,
@@ -106,12 +112,6 @@ Json Web Token是怎么工作的？
 
 ## MongonDB数据库可视化
 > 数据库可视化工具:MongoBooster
-
-## 提交日志
-``` bash
-2018-09-20
-1/修改多语言支持，用户图片上传功能。
-```
 
 ## 效果图
 ![Alt text](https://github.com/hcly3015/H-Admin/raw/master/screenshot/login.png)

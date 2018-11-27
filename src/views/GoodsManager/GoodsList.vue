@@ -56,6 +56,7 @@ export default {
         page: this.pageIndex,
         pageSize: this.pageSize
       }
+      let that = this
       let paras = Object.assign(pageParas, filter)
       api.goods.goodsList(paras).then(response => {
         if (response.success) {
@@ -67,6 +68,8 @@ export default {
           // 并且清除掉这个token
           this.$store.dispatch('UserLogout')
         }
+      }, function (error) {
+        that.msgWarning(error.status + ' ' + error.statusText)
       })
     },
 

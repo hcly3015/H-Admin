@@ -8,7 +8,7 @@ const mysqlDB = {
 // 服务地址
 const serverAddress = '127.0.0.1'
 // 服务端口
-const serverPort = '9522'
+const serverPort = '9521'
 
 const baseApi = '/api'
 

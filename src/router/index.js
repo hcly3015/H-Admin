@@ -17,10 +17,10 @@ import RoleSetting from '@/views/PermsManager/RoleSetting'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'hash',
   routes: [
     {
-      path: '/login',
-      name: 'login',
+      path: '/',
       component: Login,
       meta: {
         title: 'login',
@@ -28,24 +28,16 @@ export default new Router({
       }
     },
     {
-      path: '/',
+      path: '/index',
       component: Index,
       redirect: '/dashboard',
-      meta: {
-        title: 'home',
-        keepAlive: false
-      }
-    },
-    {
-      path: '/',
-      component: Index,
       children: [
         {
           path: '/dashboard',
           name: 'dashboard',
           component: Dashboard,
           meta: {
-            title: 'home',
+            title: 'dashboard',
             keepAlive: false
           }
         },

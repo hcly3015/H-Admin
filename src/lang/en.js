@@ -48,6 +48,7 @@ export default {
     closeother: 'Close Other',
     closeall: 'Close All',
     home: 'Home',
+    dashboard: 'Home',
     userlist: 'User List',
     permssetting: 'Permission Setting',
     rolesetting: 'Role Setting',

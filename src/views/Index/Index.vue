@@ -182,7 +182,7 @@ export default {
     // 退出
     logout () {
       this.$store.dispatch('UserLogout')
-      this.$router.push({ path: '/login' })
+      this.$router.push({ path: '/' })
     },
     // 切换语言
     changeLang (val) {

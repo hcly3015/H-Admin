@@ -43,8 +43,8 @@ Vue.config.productionTip = false
 // 路由判断
 router.beforeEach((to, from, next) => {
   // window.document.title = to.meta.title ? to.meta.title + '-' + Config.siteName : Config.siteName
-  if (!sessionStorage.getItem(Config.userInfo) && to.path !== '/login') {
-    next({ path: '/login' })
+  if (!sessionStorage.getItem(Config.userInfo) && to.path !== '/') {
+    next({ path: '/' })
   } else {
     next()
   }

@@ -48,6 +48,7 @@ export default {
     closeother: '關閉其它',
     closeall: '關閉所有',
     home: '首頁',
+    dashboard: '首頁',
     userlist: '用戶列表',
     permssetting: '權限設置',
     rolesetting: '角色設置',

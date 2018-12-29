@@ -11,12 +11,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      // MongoDB || Mysql
       // '/api': {
       //   target: 'http://127.0.0.1:9521',
       //   changeOrigin: true,
       // },
+      // 腾讯云
       '/api': {
-        target: 'http://127.0.0.1:9522',
+        target: 'http://148.70.59.54:9521',
         changeOrigin: true,
       }
     },

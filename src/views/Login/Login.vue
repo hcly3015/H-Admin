@@ -83,7 +83,7 @@ export default {
           this.$store.dispatch('UserLogin', JSON.stringify(userInfo))
 
           // 跳到目标页
-          this.$router.push({ path: '/' })
+          this.$router.push({ path: '/index' })
         } else {
           this.msgInfo(response.msg)
         }
